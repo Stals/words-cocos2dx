@@ -49,3 +49,23 @@ void Word::alignLettersHorizontallyWithPadding(float padding){
         }
     }
 }
+
+
+void Word::randomlyRotateLetters(){
+	// на сколько градусов в каждую сотрону можно развенрнуть букву
+	const int range = 10;
+	if (m_pChildren && m_pChildren->count() > 0)
+    {
+        CCObject* pObject = NULL;
+        CCARRAY_FOREACH(m_pChildren, pObject)
+        {
+            CCNode* pChild = dynamic_cast<CCNode*>(pObject);
+            if (pChild)
+            {
+				int r = rand() % (range * 2);
+				pChild->runAction(CCRotateBy::create(0, r - range));
+			}
+		}
+	}
+
+}

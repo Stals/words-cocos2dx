@@ -12,6 +12,7 @@ public:
 	~Word(void);
 
 	void alignLettersHorizontallyWithPadding(float padding);
+	void randomlyRotateLetters();
 
 private:
 	std::vector<Letter*> letters;
