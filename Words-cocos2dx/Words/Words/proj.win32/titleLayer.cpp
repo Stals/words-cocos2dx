@@ -71,10 +71,14 @@ bool TitleLayer::init()
 	this->addChild(letter);*/
 
 	Word *word = new Word("WORDS");
+	word->appendLetter('!');
+	word->removeLetter(5);
+	this->addChild(word);
+
 	word->alignLettersHorizontallyWithPadding(42);
 	word->setPosition(ccp(windowSize.width/2, windowSize.height - 50));
 	word->randomlyRotateLetters();
-	this->addChild(word);
+
 	return true;
 }
 

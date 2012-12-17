@@ -6,11 +6,12 @@ USING_NS_CC;
 // TODO align должен сам их по ширине делать праивльно!
 Word::Word(std::string word){
 	CCLayer::init();
+	this->setTouchEnabled(true);
 	this->autorelease();
 
 	for(int id = 0; id < word.size(); ++id){
 		Letter *letter = new Letter(word[id], id);
-		this->addChild(letter);
+		this->addChild(letter, 0, id);
 		//letters.push_back(letter);
 	}
 }
@@ -19,6 +20,27 @@ Word::Word(std::string word){
 Word::~Word(void)
 {
 }
+
+void Word::appendLetter(char l){
+	int id = this->getChildrenCount();
+	Letter *letter = new Letter(l, id);
+	this->addChild(letter, 0, id);
+}
+
+void Word::removeLetter(size_t id){
+	this->removeChildByTag(id, true);
+}
+
+void Word::showLetter(size_t id){
+
+}
+
+void Word::hideLetter(size_t id){
+
+}
+
+
+
 
 void Word::alignLettersHorizontallyWithPadding(float padding){
     float width = -padding;
@@ -69,4 +91,23 @@ void Word::randomlyRotateLetters(){
 		}
 	}
 
+}
+
+
+
+
+bool Word::ccTouchBegan(cocos2d::CCTouch* touch, cocos2d::CCEvent* event){
+	return true;
+}
+
+void Word::ccTouchMoved(cocos2d::CCTouch* touch, cocos2d::CCEvent* event){
+
+}
+
+void Word::ccTouchEnded(cocos2d::CCTouch* touch, cocos2d::CCEvent* event){
+
+}
+
+void Word::registerWithTouchDispatcher(){
+	CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, false);
 }
