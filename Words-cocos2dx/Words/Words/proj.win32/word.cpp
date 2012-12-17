@@ -32,15 +32,12 @@ void Word::removeLetter(size_t id){
 }
 
 void Word::showLetter(size_t id){
-
+	this->getChildByTag(id)->setVisible(true);
 }
 
 void Word::hideLetter(size_t id){
-
+	this->getChildByTag(id)->setVisible(false);
 }
-
-
-
 
 void Word::alignLettersHorizontallyWithPadding(float padding){
     float width = -padding;
