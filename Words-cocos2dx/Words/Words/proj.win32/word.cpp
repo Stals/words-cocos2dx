@@ -3,6 +3,7 @@
 USING_NS_CC;
 
 //TODO в терии я могу от меню наследоваться, хотя хз коненчо
+// TODO align должен сам их по ширине делать праивльно!
 Word::Word(std::string word){
 	CCLayer::init();
 	this->autorelease();

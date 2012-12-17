@@ -1,6 +1,6 @@
 #include "titleLayer.h"
 
-//#include "GameLayer.h"
+#include "gameLayer.h"
 //#include "ScoresLayer.h"
 //#include "ControlsLayer.h"
 
@@ -79,7 +79,7 @@ bool TitleLayer::init()
 }
 
 void TitleLayer::newGameAction(CCObject *pSender){
-	//CCDirector::sharedDirector()->replaceScene(GameLayer::scene());
+	CCDirector::sharedDirector()->replaceScene(GameLayer::scene());
 }
 
 void TitleLayer::leaderboardAction(CCObject *pSender){
