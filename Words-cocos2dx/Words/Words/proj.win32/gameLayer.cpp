@@ -21,8 +21,11 @@ CCScene* GameLayer::scene()
 	return scene;
 }
 
-bool GameLayer::init()
-{
+bool GameLayer::init(){
+// TODO
+// когда я кликаю - буква уже добавилась у игрока. - но она visible(false)
+// когда фейковая буква до туда долетает - мы просто её удаляем и делаем visible(true). 
+
 	if ( !CCLayer::init() )
 	{
 		return false;

@@ -2,6 +2,9 @@
 
 USING_NS_CC;
 Letter::Letter(char letter, size_t id){
+	// TODO - нужно либо делать rect метод чтобы правильный размер сделать
+	// либо он на автомате будет работать. я не знаю
+
 	this->id = id;
 
 	CCSprite::init();

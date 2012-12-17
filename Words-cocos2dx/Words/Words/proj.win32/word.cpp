@@ -94,6 +94,7 @@ void Word::randomlyRotateLetters(){
 
 
 bool Word::ccTouchBegan(cocos2d::CCTouch* touch, cocos2d::CCEvent* event){
+	// TODO  при определении точки еще нужно скорее всего учитывать padding - типо width + padding*id
 	return true;
 }
 
