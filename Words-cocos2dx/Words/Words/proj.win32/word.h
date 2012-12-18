@@ -18,6 +18,8 @@ public:
 	void showLetter(size_t id);
 	void hideLetter(size_t id);
 	
+	std::string getString();
+
 	void alignLettersHorizontallyWithPadding(float padding);
 	void randomlyRotateLetters();
 	

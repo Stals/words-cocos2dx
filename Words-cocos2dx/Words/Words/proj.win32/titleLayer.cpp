@@ -77,7 +77,6 @@ bool TitleLayer::init()
 	word->alignLettersHorizontallyWithPadding(42);
 	word->setPosition(ccp(windowSize.width/2, windowSize.height - 50));
 	word->randomlyRotateLetters();
-
 	return true;
 }
 

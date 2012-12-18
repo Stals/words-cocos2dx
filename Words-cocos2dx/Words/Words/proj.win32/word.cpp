@@ -39,6 +39,21 @@ void Word::hideLetter(size_t id){
 	this->getChildByTag(id)->setVisible(false);
 }
 
+
+std::string Word::getString(){
+	std::string result = "";
+	if (m_pChildren && m_pChildren->count() > 0)
+    {
+        CCObject* pObject = NULL;
+        CCARRAY_FOREACH(m_pChildren, pObject)
+        {
+			Letter* pChild = dynamic_cast<Letter*>(pObject);
+			result += pChild->letter;
+		}
+	}
+	return result;
+}
+
 void Word::alignLettersHorizontallyWithPadding(float padding){
     float width = -padding;
     if (m_pChildren && m_pChildren->count() > 0)

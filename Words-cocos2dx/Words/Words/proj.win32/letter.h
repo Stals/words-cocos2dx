@@ -7,5 +7,6 @@ public:
 	Letter(char letter, size_t id);
 	~Letter(void);
 	size_t id;
+	char letter;
 };
 
