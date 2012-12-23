@@ -1,5 +1,6 @@
 #include "db.h"
 #include <ctime>
+#include <boost\algorithm\string.hpp>
 
 DB::DB(void):
 	conn("words.sqlite"),
@@ -58,7 +59,7 @@ std::string DB::getWordById(int id){
 		wordById.bind( ":id", id ); 
 		
 		sqlite::row wordRow = wordById.step();
-		return wordRow.column< std::string >( 0 );
+		return boost::to_upper_copy(wordRow.column< std::string >( 0 ));
 	//}catch( sqlite::sqlite_error &e ) {
 	//	std::cerr << "error: " << e.what() << ", code " << e.get_code() << std::endl;	
 	//}

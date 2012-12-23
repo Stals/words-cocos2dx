@@ -152,17 +152,17 @@ void GameLayer::setupPlayerWord(){
 void GameLayer::startNewGame(){
 	if(gameWord != NULL)
 		gameWord->removeFromParentAndCleanup(true);
-	else{
-		//playerWord->clear(); // TODO убрать все буквы из слова игрока если такие есть.
+	
+	//playerWord->clear(); // TODO убрать все буквы из слова игрока если такие есть.
 
-		CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
+	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
-		gameWord = db.getRandomWord();
-		gameWord->alignLettersHorizontallyWithPadding(42);
-		gameWord->setPosition(windowSize.width/2, windowSize.height - 50);
-		gameWord->randomlyRotateLetters();
-		this->addChild(gameWord);
-	}
+	gameWord = db.getRandomWord();
+	gameWord->alignLettersHorizontallyWithPadding(42);
+	gameWord->setPosition(windowSize.width/2, windowSize.height - 50);
+	gameWord->randomlyRotateLetters();
+	this->addChild(gameWord);
+	
 
 }
 
