@@ -1,6 +1,7 @@
 #pragma once
 #include "cocos2d.h"
 #include "db.h"
+#include "word.h"
 
 class GameLayer : public cocos2d::CCLayer
 {
@@ -17,6 +18,14 @@ public:
 	void GameLayer::playAgainAction(CCObject *pSender);
 	void GameLayer::mainMenuAction(CCObject *pSender);
 
+private:
+	void setupBackGround();
+	void setupButtons();
+	void setupPlayerWord();
 
+	void startNewGame();
+	DB db;
+	Word* gameWord;
+	Word* playerWord;
 };
 

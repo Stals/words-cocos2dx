@@ -8,8 +8,11 @@
 class Word : public cocos2d::CCLayer
 {
 public:
+	Word();
 	Word(std::string word);
 	~Word(void);
+
+	void initWithString(std::string word);
 
 	// нужно делать alighn заново!
 	void appendLetter(char letter);
@@ -18,6 +21,7 @@ public:
 	void showLetter(size_t id);
 	void hideLetter(size_t id);
 	
+	// Возвращает слово в виде строки
 	std::string getString();
 
 	void alignLettersHorizontallyWithPadding(float padding);

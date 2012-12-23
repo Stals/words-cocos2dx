@@ -2,6 +2,12 @@
 
 USING_NS_CC;
 
+Word::Word(){
+	CCLayer::init();
+	this->setTouchEnabled(true);
+	this->autorelease();
+}
+
 //TODO в терии я могу от меню наследоваться, хотя хз коненчо
 // TODO align должен сам их по ширине делать праивльно!
 Word::Word(std::string word){
@@ -9,17 +15,22 @@ Word::Word(std::string word){
 	this->setTouchEnabled(true);
 	this->autorelease();
 
-	for(int id = 0; id < word.size(); ++id){
-		appendLetter(word[id]);
-		//Letter *letter = new Letter(word[id], id);
-		//this->addChild(letter, 0, id);
-		//letters.push_back(letter);
-	}
+	initWithString(word);
 }
 // Мне либо нужно уметь правильно отрисовывать, либо добавить в себя и просто в правильное место зафигачить
 
 Word::~Word(void)
 {
+}
+
+// TODO - в теории нужно будет еще все сбрасывать как-то
+void Word::initWithString(std::string word){
+	for(size_t id = 0; id < word.size(); ++id){
+		appendLetter(word[id]);
+		//Letter *letter = new Letter(word[id], id);
+		//this->addChild(letter, 0, id);
+		//letters.push_back(letter);
+	}
 }
 
 void Word::appendLetter(char l){

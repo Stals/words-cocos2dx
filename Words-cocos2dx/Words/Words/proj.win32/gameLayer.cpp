@@ -10,18 +10,17 @@ CCScene* GameLayer::scene()
 {
 	// 'scene' is an autorelease object
 	CCScene *scene = CCScene::create();
-
 	// 'layer' is an autorelease object
-	GameLayer *layer = GameLayer::create();
-    
+	GameLayer *layer = GameLayer::create();    
 	// add layer as a child to scene
 	scene->addChild(layer);
-    
 	// return the scene
 	return scene;
 }
 
 bool GameLayer::init(){
+	gameWord = NULL;
+	playerWord = NULL;
 // TODO
 // когда я кликаю - буква уже добавилась у игрока. - но она visible(false)
 // когда фейковая буква до туда долетает - мы просто её удаляем и делаем visible(true). 
@@ -31,13 +30,6 @@ bool GameLayer::init(){
 		return false;
 	}
     
-    // Get window size
-    CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
-
-	/* BackGround image */
-	CCSprite *backImage = CCSprite::spriteWithFile("menu/bg_darkwood.jpg");
-    backImage->setPosition(ccp(windowSize.width/2, windowSize.height/2));
-    this->addChild(backImage);
     //this->setIsTouchEnabled(true);
 
 	/* Title */
@@ -88,12 +80,24 @@ bool GameLayer::init(){
 
 
 	// TODO - не забыть удалить слово. - хот в терии должно само
-	DB db;
-	Word * dbWord = db.getRandomWord();
-	dbWord->alignLettersHorizontallyWithPadding(42);
-	dbWord->setPosition(ccp(windowSize.width/2, windowSize.height - 50));
-	dbWord->randomlyRotateLetters();
-	this->addChild(dbWord);
+
+	//Word * dbWord = db.getRandomWord();
+	//dbWord->alignLettersHorizontallyWithPadding(42);
+	//dbWord->setPosition(ccp(windowSize.width/2, windowSize.height - 50));
+	//dbWord->randomlyRotateLetters();
+	//this->addChild(dbWord);
+
+
+	//
+	//gameWord = new Word;
+	//gameWord->setPosition(ccp(windowSize.width/2, windowSize.height - 50));
+	//playerWord = new Word;
+	//playerWord->setPosition(ccp(windowSize.width/2, 50));
+
+	setupBackGround();
+	setupButtons();
+	setupPlayerWord();
+	startNewGame();
 
 	return true;
 }
@@ -105,3 +109,60 @@ void GameLayer::playAgainAction(CCObject *pSender){
 void GameLayer::mainMenuAction(CCObject *pSender){
 	CCDirector::sharedDirector()->replaceScene(TitleLayer::scene());
 }
+
+void GameLayer::setupBackGround(){
+    CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
+
+	/* BackGround image */
+	CCSprite *backImage = CCSprite::spriteWithFile("menu/bg_darkwood.jpg");
+    backImage->setPosition(ccp(windowSize.width/2, windowSize.height/2));
+    this->addChild(backImage);
+}
+
+void GameLayer::setupButtons(){
+	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
+
+	CCSprite *toMainMenuSprite = CCSprite::spriteWithFile("toMainMenu.png");
+	CCMenuItemSprite *mainMenuButton = CCMenuItemSprite::itemWithNormalSprite(toMainMenuSprite, toMainMenuSprite, toMainMenuSprite,
+		this, menu_selector(GameLayer::mainMenuAction));
+
+   
+	CCMenu *menu = CCMenu::menuWithItems(mainMenuButton, NULL);
+	//menu->alignItemsVerticallyWithPadding(20);
+
+
+	menu->setPosition(ccp(toMainMenuSprite->getContentSize().width/2,
+							windowSize.height - toMainMenuSprite->getContentSize().height/2));
+
+	// Set position of menu to be below the title text
+	//menu->setPosition(ccp(0/*(-windowSize.width/4) + (menu->getContentSize().width)*/ , 0));
+	//menu->setPosition(ccp(-windowSize.width / 2, (windowSize.height/2) - menu->getContentSize().height));
+	this->addChild(menu);
+}
+
+void GameLayer::setupPlayerWord(){
+	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
+	playerWord = new Word;
+	playerWord->alignLettersHorizontallyWithPadding(42);
+	playerWord->setPosition(ccp(windowSize.width/2, 50));
+	playerWord->randomlyRotateLetters();
+	this->addChild(playerWord);
+}
+
+void GameLayer::startNewGame(){
+	if(gameWord != NULL)
+		gameWord->removeFromParentAndCleanup(true);
+	else{
+		//playerWord->clear(); // TODO убрать все буквы из слова игрока если такие есть.
+
+		CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
+
+		gameWord = db.getRandomWord();
+		gameWord->alignLettersHorizontallyWithPadding(42);
+		gameWord->setPosition(windowSize.width/2, windowSize.height - 50);
+		gameWord->randomlyRotateLetters();
+		this->addChild(gameWord);
+	}
+
+}
+
