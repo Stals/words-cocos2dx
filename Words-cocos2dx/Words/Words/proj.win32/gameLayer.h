@@ -1,5 +1,6 @@
 #pragma once
 #include "cocos2d.h"
+#include "db.h"
 
 class GameLayer : public cocos2d::CCLayer
 {

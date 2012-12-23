@@ -10,8 +10,9 @@ Word::Word(std::string word){
 	this->autorelease();
 
 	for(int id = 0; id < word.size(); ++id){
-		Letter *letter = new Letter(word[id], id);
-		this->addChild(letter, 0, id);
+		appendLetter(word[id]);
+		//Letter *letter = new Letter(word[id], id);
+		//this->addChild(letter, 0, id);
 		//letters.push_back(letter);
 	}
 }
@@ -22,6 +23,7 @@ Word::~Word(void)
 }
 
 void Word::appendLetter(char l){
+	l = toupper(l);
 	int id = this->getChildrenCount();
 	Letter *letter = new Letter(l, id);
 	this->addChild(letter, 0, id);
@@ -132,6 +134,6 @@ void Word::addContainedWord(std::string word){
 bool Word::isContained(std::string word){
 	if(contains.find(word) != contains.end())
 		return true;
-	else false;
+	return false;
 }
 

@@ -3,21 +3,16 @@
 
 DB::DB(void):
 	conn("words.sqlite"),
-	countWords( conn, "SELECT count(*) FROM words WHERE count > 20;" ),
-	randomWord( conn, "SELECT id, word, contains FROM words WHERE count > 20 LIMIT :rand, 1;" ),
-	wordById( conn, "SELECT word WHERE id = :id")
+	countWords( conn, "SELECT count(*) FROM words WHERE count > 20;" )
 {
-
-
-	sqlite::command c1( conn,
-    "SELECT id, word, count, contains FROM words WHERE count > 20;" );
-	c1.step();
-
+	srand(std::time(0));
 }
 
 // TODO ≈динстенное что , нужно будет сделать чтобы не возврвли одинаковое id - тоесть заново рандомить пока оно не будет входить в список уже бывших
 Word* DB::getRandomWord(){
 	///try{
+	sqlite::query randomWord( conn, "SELECT id, word, contains FROM words WHERE count > 20 LIMIT :rand, 1;" );
+
 		int count = 0; // сколько подход€щих слов в базе
 		sqlite::row r1 = countWords.step();
 		r1.column( 0, count );
@@ -28,10 +23,14 @@ Word* DB::getRandomWord(){
 		sqlite::row wordRow = randomWord.step();
 
 		int id = wordRow.column< int >( 0 );
-		std::string word = wordRow.column< std::string >( 1 );
+		Word *word = new Word(wordRow.column< std::string >( 1 ));
 		std::string contains = wordRow.column< std::string >( 2 );
 
-		int i = 0;
+		std::vector<std::string> wordIds = split(contains, ',');
+		for (int i = 0; i < wordIds.size(); ++i){
+			word->addContainedWord(getWordById(atoi(wordIds[i].c_str())));
+		}
+
 
 
 	// ѕолучаем все слова по запросу
@@ -47,19 +46,23 @@ Word* DB::getRandomWord(){
 	//	std::cerr << "error: " << e.what() << ", code " << e.get_code() << std::endl;	
 	//}	
 
-	return new Word("word");
+	return word;
 }
 
 
 std::string DB::getWordById(int id){
-	std::string result;
+	
 	//try{
+	sqlite::query wordById( conn, "SELECT word FROM words WHERE id= :id");
+	wordById.clear_bindings();
 		wordById.bind( ":id", id ); 
-		//wordById.step();
+		
+		sqlite::row wordRow = wordById.step();
+		return wordRow.column< std::string >( 0 );
 	//}catch( sqlite::sqlite_error &e ) {
 	//	std::cerr << "error: " << e.what() << ", code " << e.get_code() << std::endl;	
 	//}
-	return result;
+
 }
 
 DB::~DB(void)

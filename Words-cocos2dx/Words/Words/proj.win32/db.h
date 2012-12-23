@@ -20,7 +20,5 @@ private:
 
 	sqlite::connection conn;
 	sqlite::query countWords;
-	sqlite::query randomWord;
-	sqlite::query wordById;
 };
 

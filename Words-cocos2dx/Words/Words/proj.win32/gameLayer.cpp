@@ -73,18 +73,28 @@ bool GameLayer::init(){
 	//letter->runAction(CCRotateBy::create(10, 360));
 	//this->addChild(letter);*/
 
-	Word *PcWord = new Word("123LONGWORD");
-	PcWord->alignLettersHorizontallyWithPadding(42);
-	PcWord->setPosition(ccp(windowSize.width/2, windowSize.height - 50));
-	PcWord->randomlyRotateLetters();
+	//Word *PcWord = new Word("123LONGWORD");
+	//PcWord->alignLettersHorizontallyWithPadding(42);
+	//PcWord->setPosition(ccp(windowSize.width/2, windowSize.height - 50));
+	//PcWord->randomlyRotateLetters();
 
-	Word *PlayerWord = new Word("WORDS");
-	PlayerWord->alignLettersHorizontallyWithPadding(42);
-	PlayerWord->setPosition(ccp(windowSize.width/2, 50));
-	PlayerWord->randomlyRotateLetters();
+	//Word *PlayerWord = new Word("WORDS");
+	//PlayerWord->alignLettersHorizontallyWithPadding(42);
+	//PlayerWord->setPosition(ccp(windowSize.width/2, 50));
+	//PlayerWord->randomlyRotateLetters();
 
-	this->addChild(PcWord);
-	this->addChild(PlayerWord);
+	//this->addChild(PcWord);
+	//this->addChild(PlayerWord);
+
+
+	// TODO - не забыть удалить слово. - хот в терии должно само
+	DB db;
+	Word * dbWord = db.getRandomWord();
+	dbWord->alignLettersHorizontallyWithPadding(42);
+	dbWord->setPosition(ccp(windowSize.width/2, windowSize.height - 50));
+	dbWord->randomlyRotateLetters();
+	this->addChild(dbWord);
+
 	return true;
 }
 
