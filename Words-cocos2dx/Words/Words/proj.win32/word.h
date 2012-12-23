@@ -28,8 +28,14 @@ public:
 	virtual void ccTouchEnded(cocos2d::CCTouch* touch, cocos2d::CCEvent* event);
 
 	void registerWithTouchDispatcher();
+
+	// Добавить слово, которе входит в этом слово
+	void addContainedWord(std::string word);
+	// проверяет если ли слово среди тех что можно составить из букв слова - и есть в словаре
+	bool isContained(std::string word);
 	
 private:
 	//std::vector<Letter*> letters;
+	std::set<std::string> contains;
 };
 

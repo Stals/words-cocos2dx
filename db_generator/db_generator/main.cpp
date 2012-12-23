@@ -20,8 +20,8 @@
 #include "word.h"
 
 // ћинимальна€ и максимальна€ длинна слова, дл€ которого будут искатьс€ вход€щие в него слова
-const size_t MIN_LENGTH = 0;
-const size_t MAX_LENGTH = 150;
+const size_t MIN_LENGTH = 7;
+const size_t MAX_LENGTH = 11;
 
 
 void loadWords(std::vector<Word> &dict){

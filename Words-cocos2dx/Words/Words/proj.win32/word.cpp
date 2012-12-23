@@ -124,3 +124,14 @@ void Word::ccTouchEnded(cocos2d::CCTouch* touch, cocos2d::CCEvent* event){
 void Word::registerWithTouchDispatcher(){
 	CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, false);
 }
+
+void Word::addContainedWord(std::string word){
+	contains.insert(word);
+}
+
+bool Word::isContained(std::string word){
+	if(contains.find(word) != contains.end())
+		return true;
+	else false;
+}
+
