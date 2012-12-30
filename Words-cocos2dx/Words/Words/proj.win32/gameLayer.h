@@ -15,12 +15,14 @@ public:
 	// implement the "static node()" method manually
 	CREATE_FUNC(GameLayer);
     
-	void GameLayer::playAgainAction(CCObject *pSender);
-	void GameLayer::mainMenuAction(CCObject *pSender);
+	void playAgainAction(CCObject *pSender);
+	void mainMenuAction(CCObject *pSender);
+	void submitButtonAction(CCObject *pSender);
 
 private:
 	void setupBackGround();
-	void setupButtons();
+	void setupTopButtons();
+	void setupSubmitButton();
 	void setupPlayerWord();
 
 	void startNewGame();

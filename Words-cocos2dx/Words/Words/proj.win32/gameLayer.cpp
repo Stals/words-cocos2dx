@@ -95,10 +95,10 @@ bool GameLayer::init(){
 	//playerWord->setPosition(ccp(windowSize.width/2, 50));
 
 	setupBackGround();
-	setupButtons();
+	setupTopButtons();
+	setupSubmitButton();
 	setupPlayerWord();
 	startNewGame();
-
 	return true;
 }
 
@@ -110,6 +110,15 @@ void GameLayer::mainMenuAction(CCObject *pSender){
 	CCDirector::sharedDirector()->replaceScene(TitleLayer::scene());
 }
 
+
+void GameLayer::submitButtonAction(CCObject *pSender){
+	// TODO - если слово подходит
+		// ќчищаем слово игрока и покаываем все буквы у копа
+	// если нет
+		// √оворим что слово не подходит - пока не знаю как, но ничего не мен€ем, вдруг игрок опечаталс€ или типо того.
+}
+
+
 void GameLayer::setupBackGround(){
     CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
@@ -119,7 +128,7 @@ void GameLayer::setupBackGround(){
     this->addChild(backImage);
 }
 
-void GameLayer::setupButtons(){
+void GameLayer::setupTopButtons(){
 	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
 	CCSprite *toMainMenuSprite = CCSprite::spriteWithFile("toMainMenu.png");
@@ -140,6 +149,26 @@ void GameLayer::setupButtons(){
 	this->addChild(menu);
 }
 
+void GameLayer::setupSubmitButton(){
+	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
+
+	CCSprite *submitSprite = CCSprite::spriteWithFile("submit.png");
+	CCSprite *submitPressedSprite = CCSprite::spriteWithFile("submit_pressed.png");
+	CCMenuItemSprite *submitButton = CCMenuItemSprite::itemWithNormalSprite(submitSprite, submitPressedSprite, submitSprite,
+		this, menu_selector(GameLayer::submitButtonAction));
+
+   
+	CCMenu *menu = CCMenu::menuWithItems(submitButton, NULL);
+	//menu->alignItemsVerticallyWithPadding(20);
+
+
+	menu->setPosition(ccp(windowSize.width/2,
+						  windowSize.height/2));
+	this->addChild(menu);
+
+}
+
+
 void GameLayer::setupPlayerWord(){
 	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 	playerWord = new Word;
@@ -149,13 +178,14 @@ void GameLayer::setupPlayerWord(){
 	this->addChild(playerWord);
 }
 
-void GameLayer::startNewGame(){
+void GameLayer::startNewGame(){	
+	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
+
 	if(gameWord != NULL)
 		gameWord->removeFromParentAndCleanup(true);
 	
 	//playerWord->clear(); // TODO убрать все буквы из слова игрока если такие есть.
 
-	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
 	gameWord = db.getRandomWord();
 	gameWord->alignLettersHorizontallyWithPadding(42);
