@@ -122,7 +122,6 @@ void Word::randomlyRotateLetters(){
 
 
 bool Word::ccTouchBegan(cocos2d::CCTouch* touch, cocos2d::CCEvent* event){
-	// TODO  при определении точки еще нужно скорее всего учитывать padding - типо width + padding*id
 	return true;
 }
 
@@ -135,7 +134,7 @@ void Word::ccTouchEnded(cocos2d::CCTouch* touch, cocos2d::CCEvent* event){
 }
 
 void Word::registerWithTouchDispatcher(){
-	CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, false);
+	CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, false); // false
 }
 
 void Word::addContainedWord(std::string word){
