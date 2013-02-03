@@ -55,6 +55,51 @@
     <ClInclude Include="word.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="gameLayer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="db.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\split.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\basic_statement.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\command.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\connection.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\exception.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\manipulator.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\query.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\row.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\transaction.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\util.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3ext.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -73,6 +118,24 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="word.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="gameLayer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="db.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\basic_statement.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\command.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\connection.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\exception.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\manipulator.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\query.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\row.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\transaction.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\util.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3.c">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>

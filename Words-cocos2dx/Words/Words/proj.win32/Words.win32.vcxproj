@@ -57,6 +57,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS_DEBUG;COCOS2D_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -90,8 +91,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <ExceptionHandling>
-      </ExceptionHandling>
+      <ExceptionHandling>Sync</ExceptionHandling>
       <DebugInformationFormat>
       </DebugInformationFormat>
       <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGSNDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -131,17 +131,44 @@
     <ResourceCompile Include="Words.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\basic_statement.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\command.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\connection.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\exception.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\manipulator.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\query.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\row.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\transaction.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\util.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3ext.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="db.h" />
+    <ClInclude Include="gameLayer.h" />
     <ClInclude Include="letter.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="titleLayer.h" />
+    <ClInclude Include="utils\split.h" />
     <ClInclude Include="word.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\basic_statement.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\command.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\connection.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\exception.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\manipulator.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\query.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\row.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\transaction.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\util.cc" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="db.cpp" />
+    <ClCompile Include="gameLayer.cpp" />
     <ClCompile Include="letter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="titleLayer.cpp" />

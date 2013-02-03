@@ -1,29 +1,29 @@
-﻿Build started 16.12.2012 18:24:08.
+﻿Build started 23.12.2012 14:22:38.
      1>Project "C:\Users\Stals\Dropbox\Programming\BigProjects\C++\Workds-workingTitle\Words-cocos2dx\Words\Words\proj.win32\Words.win32.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "Release.win32\Words.win32.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Release.win32\Words.win32.unsuccessfulbuild".
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGSNDEBUG /D _UNICODE /D UNICODE /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt titleLayer.cpp
-         titleLayer.cpp
-     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
-     1>titleLayer.cpp(35): warning C4996: 'cocos2d::CCSprite::spriteWithFile': was declared deprecated
-                 C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes/CCSprite.h(180) : see declaration of 'cocos2d::CCSprite::spriteWithFile'
-     1>titleLayer.cpp(49): warning C4996: 'cocos2d::CCSprite::spriteWithFile': was declared deprecated
-                 C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes/CCSprite.h(180) : see declaration of 'cocos2d::CCSprite::spriteWithFile'
-     1>titleLayer.cpp(50): warning C4996: 'cocos2d::CCMenuItemSprite::itemWithNormalSprite': was declared deprecated
-                 C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes/CCMenuItem.h(284) : see declaration of 'cocos2d::CCMenuItemSprite::itemWithNormalSprite'
-     1>titleLayer.cpp(52): warning C4996: 'cocos2d::CCSprite::spriteWithFile': was declared deprecated
-                 C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes/CCSprite.h(180) : see declaration of 'cocos2d::CCSprite::spriteWithFile'
-     1>titleLayer.cpp(54): warning C4996: 'cocos2d::CCMenuItemSprite::itemWithNormalSprite': was declared deprecated
-                 C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes/CCMenuItem.h(284) : see declaration of 'cocos2d::CCMenuItemSprite::itemWithNormalSprite'
-     1>titleLayer.cpp(57): warning C4996: 'cocos2d::CCMenu::menuWithItems': was declared deprecated
-                 C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes/CCMenu.h(80) : see declaration of 'cocos2d::CCMenu::menuWithItems'
+         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGSNDEBUG /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt db.cpp
+         db.cpp
        ResourceCompile:
          All outputs are up-to-date.
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\Release.win32\Words.win32.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\Release.win32\\" libcocos2d.lib libExtensions.lib opengl32.lib glew32.lib libCocosDenshion.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release.win32\Words.win32.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\Release.win32\Words.win32.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\Release.win32\Words.win32.lib" /MACHINE:X86 Release.win32\Words.res
+         Release.win32\sqlite3.obj
+         Release.win32\basic_statement.obj
+         Release.win32\command.obj
+         Release.win32\connection.obj
+         Release.win32\exception.obj
+         Release.win32\manipulator.obj
+         Release.win32\query.obj
+         Release.win32\row.obj
+         Release.win32\transaction.obj
+         Release.win32\util.obj
          Release.win32\AppDelegate.obj
          Release.win32\HelloWorldScene.obj
+         Release.win32\db.obj
+         Release.win32\gameLayer.obj
          Release.win32\letter.obj
          Release.win32\main.obj
          Release.win32\titleLayer.obj
@@ -38,4 +38,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.71
+Time Elapsed 00:00:06.64
