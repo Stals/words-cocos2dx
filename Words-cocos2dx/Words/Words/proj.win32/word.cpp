@@ -34,14 +34,24 @@ void Word::initWithString(std::string word){
 }
 
 void Word::appendLetter(char l){
-	l = toupper(l);
 	int id = this->getChildrenCount();
 	Letter *letter = new Letter(l, id);
 	this->addChild(letter, 0, id);
 }
 
+void Word::appendLetter(Letter *letter){
+	int id = this->getChildrenCount();
+	Letter *l = new Letter(letter->letter, letter->id);
+	this->addChild(l, 0, id);
+}
+
 void Word::removeLetter(size_t id){
 	this->removeChildByTag(id, true);
+}
+
+Letter* Word::getLetter(size_t id){
+	Letter* letter = dynamic_cast<Letter*>(this->getChildByTag(id));
+	return letter;
 }
 
 void Word::showLetter(size_t id){

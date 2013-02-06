@@ -99,6 +99,11 @@ bool GameLayer::init(){
 	setupSubmitButton();
 	setupPlayerWord();
 	startNewGame();
+
+	Letter *letter = this->gameWord->getLetter(1);
+	letter->setVisible(false);
+	this->playerWord->appendLetter(letter);
+
 	return true;
 }
 

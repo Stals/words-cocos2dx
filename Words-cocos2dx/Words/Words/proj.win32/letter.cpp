@@ -10,7 +10,7 @@ Letter::Letter(char letter, size_t id): letter(letter), id(id){
 
 	// TODO 1 раз получать - для всех использовать потом
 	CCSprite *letterImage = CCSprite::create("letter32.png");
-	char arr[2] = {letter, '\0'};
+	char arr[2] = {toupper(letter), '\0'};
 	CCLabelTTF *letterLabel = CCLabelTTF::create(arr, "Sylfaen", 22);
 	letterLabel->setColor(ccc3(85,47,17));
 

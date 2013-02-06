@@ -16,7 +16,9 @@ public:
 
 	// нужно делать alighn заново!
 	void appendLetter(char letter);
+	void appendLetter(Letter *letter);
 	void removeLetter(size_t id);
+	Letter* getLetter(size_t id);
 
 	void showLetter(size_t id);
 	void hideLetter(size_t id);
