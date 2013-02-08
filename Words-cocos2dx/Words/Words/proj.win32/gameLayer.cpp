@@ -128,7 +128,7 @@ void GameLayer::setupBackGround(){
     CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
 	/* BackGround image */
-	CCSprite *backImage = CCSprite::spriteWithFile("menu/bg_darkwood.jpg");
+	CCSprite *backImage = CCSprite::spriteWithFile("menu/bg_darkwood_3.jpg");
     backImage->setPosition(ccp(windowSize.width/2, windowSize.height/2));
     this->addChild(backImage);
 }

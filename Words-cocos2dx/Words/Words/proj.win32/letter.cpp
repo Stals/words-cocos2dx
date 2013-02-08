@@ -9,10 +9,25 @@ Letter::Letter(char letter, size_t id): letter(letter), id(id){
 	this->autorelease();
 
 	// TODO 1 раз получать - для всех использовать потом
-	CCSprite *letterImage = CCSprite::create("letter32.png");
+	CCSprite *letterImage = CCSprite::create("letter32_2.png");
+	letterImage->setScale(32 / letterImage->getContentSize().width);
 	char arr[2] = {toupper(letter), '\0'};
-	CCLabelTTF *letterLabel = CCLabelTTF::create(arr, "Sylfaen", 22);
+	
+	
+    //CCLabelTTF *letterLabel = CCLabelTTF::create(arr, "fonts/Schwarzwald Regular.ttf", 22);
+    //CCLabelTTF *left = CCLabelTTF::create("alignment left", pFont, fontSize,
+    //                                      blockSize, kCCTextAlignmentLeft, verticalAlignment[vAlignIdx]);
+	
+	//CCLabelTTF *letterLabel = CCLabelTTF::create(arr, /*"fonts\sylfaen.ttf"*/"Sylfaen", 50);
+	
+
+	//CCLabelBMFont *letterLabel = CCLabelBMFont::create(arr, "fonts/hd/markerFelt.fnt", 10);
+	//letterLabel->setScale(0.5);
+	
+	CCLabelAtlas *letterLabel = CCLabelAtlas::create(arr, "fonts/hd/larabie-16.plist");
+	letterLabel->setAnchorPoint(ccp(0.5f, 0.5f));
 	letterLabel->setColor(ccc3(85,47,17));
+	//letterLabel->setColor(ccc3(0,0,0));
 
 	this->addChild(letterImage,1);
 	this->addChild(letterLabel,2);

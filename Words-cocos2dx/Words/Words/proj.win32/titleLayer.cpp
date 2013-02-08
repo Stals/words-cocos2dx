@@ -32,7 +32,7 @@ bool TitleLayer::init()
     CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
 	/* BackGround image */
-	CCSprite *backImage = CCSprite::spriteWithFile("menu/bg_darkwood.jpg");
+	CCSprite *backImage = CCSprite::spriteWithFile("menu/bg_darkwood_3_logo.jpg");
     backImage->setPosition(ccp(windowSize.width/2, windowSize.height/2));
     this->addChild(backImage);
     //this->setIsTouchEnabled(true);
@@ -46,10 +46,10 @@ bool TitleLayer::init()
 
 	/* Menu */
     // Create "play," "scores," and "controls" buttons - when tapped, they call methods we define: playButtonAction and scoresButtonAction
-	CCSprite *newGameSprite = CCSprite::spriteWithFile("menu/new_game_2.png");
+	CCSprite *newGameSprite = CCSprite::spriteWithFile("menu/new_game.png");
 	CCMenuItemSprite *newGameButton = CCMenuItemSprite::itemWithNormalSprite(newGameSprite, newGameSprite, newGameSprite, this, menu_selector(TitleLayer::newGameAction));
 
-	CCSprite *leaderboardSprite = CCSprite::spriteWithFile("menu/leaderboard_2.png");
+	CCSprite *leaderboardSprite = CCSprite::spriteWithFile("menu/leaderboard.png");
 	CCMenuItemSprite *leaderboardButton = CCMenuItemSprite::itemWithNormalSprite(leaderboardSprite, leaderboardSprite, leaderboardSprite,
 		this, menu_selector(TitleLayer::leaderboardAction));
 
@@ -70,13 +70,13 @@ bool TitleLayer::init()
 	letter->runAction(CCRotateBy::create(10, 360));
 	this->addChild(letter);*/
 
-	Word *word = new Word("WORDS");
-	word->appendLetter('!');
-	this->addChild(word);
+	//Word *word = new Word("WORDS");
+	//word->appendLetter('!');
+	//this->addChild(word);
 
-	word->alignLettersHorizontallyWithPadding(42);
-	word->setPosition(ccp(windowSize.width/2, windowSize.height - 50));
-	word->randomlyRotateLetters();
+	//word->alignLettersHorizontallyWithPadding(42);
+	//word->setPosition(ccp(windowSize.width/2, windowSize.height - 50));
+	//word->randomlyRotateLetters();
 	return true;
 }
 

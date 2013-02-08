@@ -121,7 +121,7 @@ void Word::randomlyRotateLetters(){
             if (pChild)
             {
 				int r = rand() % (range * 2);
-				pChild->runAction(CCRotateBy::create(0, r - range));
+				//pChild->runAction(CCRotateBy::create(0, r - range));
 			}
 		}
 	}
