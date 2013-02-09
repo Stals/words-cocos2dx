@@ -139,9 +139,11 @@ void GameLayer::letterClicked(Letter *letter){
 		playerWord->alignLettersHorizontallyWithPadding(42);
 		break;
 	case Word::Player:
+		letter->removeFromParentAndCleanup(true);
+		playerWord->alignLettersHorizontallyWithPadding(42);
 		gameWord->getLetter(letter->id)->setVisible(true);
 		//playerWord->removeLetter(letter->id);
-		letter->removeFromParentAndCleanup(true);
+
 		break;
 	}
 
