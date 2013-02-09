@@ -24,7 +24,7 @@ Word* DB::getRandomWord(){
 		sqlite::row wordRow = randomWord.step();
 
 		int id = wordRow.column< int >( 0 );
-		Word *word = new Word(wordRow.column< std::string >( 1 ));
+		Word *word = new Word(wordRow.column< std::string >( 1 ), Word::Game);
 		std::string contains = wordRow.column< std::string >( 2 );
 
 		std::vector<std::string> wordIds = split(contains, ',');

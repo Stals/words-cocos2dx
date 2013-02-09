@@ -10,11 +10,12 @@ Word::Word(){
 
 //TODO в терии я могу от меню наследоваться, хотя хз коненчо
 // TODO align должен сам их по ширине делать праивльно!
-Word::Word(std::string word){
+Word::Word(std::string word, Word::Type type){
 	CCLayer::init();
 	this->setTouchEnabled(true);
 	this->autorelease();
 
+	this->type = type;
 	initWithString(word);
 }
 // Мне либо нужно уметь правильно отрисовывать, либо добавить в себя и просто в правильное место зафигачить
@@ -132,7 +133,7 @@ void Word::randomlyRotateLetters(){
 
 
 bool Word::ccTouchBegan(cocos2d::CCTouch* touch, cocos2d::CCEvent* event){
-	return true;
+	return false;
 }
 
 void Word::ccTouchMoved(cocos2d::CCTouch* touch, cocos2d::CCEvent* event){
@@ -155,5 +156,13 @@ bool Word::isContained(std::string word){
 	if(contains.find(word) != contains.end())
 		return true;
 	return false;
+}
+
+void Word::setType(Word::Type type){
+	this->type = type;
+}	
+
+Word::Type Word::getType(){
+	return this->type;
 }
 

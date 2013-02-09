@@ -1,6 +1,7 @@
 #pragma once
 #include "cocos2d.h"
 #include "db.h"
+
 #include "word.h"
 
 class GameLayer : public cocos2d::CCLayer
@@ -18,6 +19,9 @@ public:
 	void playAgainAction(CCObject *pSender);
 	void mainMenuAction(CCObject *pSender);
 	void submitButtonAction(CCObject *pSender);
+
+	// if gameWord was clicked - append to player, if gameword was clicked - then return it back
+	void letterClicked(Letter *letter);
 
 private:
 	void setupBackGround();

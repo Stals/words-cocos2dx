@@ -5,7 +5,6 @@
 
 #include "word.h"
 
-
 class DB
 {
 public:

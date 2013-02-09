@@ -100,9 +100,8 @@ bool GameLayer::init(){
 	startNewGame();
 	setupSubmitButton();
 
-	Letter *letter = this->gameWord->getLetter(1);
-	letter->setVisible(false);
-	this->playerWord->appendLetter(letter);
+	//Letter *letter = this->gameWord->getLetter(1);
+	//this->letterClicked(letter);
 
 	return true;
 }
@@ -124,11 +123,30 @@ void GameLayer::submitButtonAction(CCObject *pSender){
 }
 
 
+void GameLayer::letterClicked(Letter *letter){
+	Word *clickedWord = (Word*)letter->getParent();
+
+	Word::Type wordType = clickedWord->getType();
+	switch(wordType){
+	case Word::Game:
+		playerWord->appendLetter(letter);
+		letter->setVisible(false);
+		playerWord->alignLettersHorizontallyWithPadding(42);
+		break;
+	case Word::Player:
+		gameWord->getLetter(letter->id)->setVisible(true);
+		//playerWord->removeLetter(letter->id);
+		letter->removeFromParentAndCleanup(true);
+		break;
+	}
+
+}
+
 void GameLayer::setupBackGround(){
     CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
 	/* BackGround image */
-	CCSprite *backImage = CCSprite::spriteWithFile("menu/bg_game4.jpg");
+	CCSprite *backImage = CCSprite::spriteWithFile("menu/bg_game4.png");
     backImage->setPosition(ccp(windowSize.width/2, windowSize.height/2));
     this->addChild(backImage);
 }
@@ -157,8 +175,8 @@ void GameLayer::setupTopButtons(){
 void GameLayer::setupSubmitButton(){
 	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
-	CCSprite *submitSprite = CCSprite::spriteWithFile("submit.png");
-	CCSprite *submitPressedSprite = CCSprite::spriteWithFile("submit_pressed.png");
+	CCSprite *submitSprite = CCSprite::spriteWithFile("submit2.png");
+	CCSprite *submitPressedSprite = CCSprite::spriteWithFile("submit_pressed2.png");
 	CCMenuItemSprite *submitButton = CCMenuItemSprite::itemWithNormalSprite(submitSprite, submitPressedSprite, submitSprite,
 		this, menu_selector(GameLayer::submitButtonAction));
 
@@ -181,6 +199,7 @@ void GameLayer::setupPlayerWord(){
 	playerWord->alignLettersHorizontallyWithPadding(42);
 	playerWord->setPosition(ccp(windowSize.width/2, 50));
 	playerWord->randomlyRotateLetters();
+	playerWord->setType(Word::Player);
 	this->addChild(playerWord);
 }
 
@@ -197,6 +216,7 @@ void GameLayer::startNewGame(){
 	gameWord->alignLettersHorizontallyWithPadding(42);
 	gameWord->setPosition(windowSize.width/2, windowSize.height - 70);
 	gameWord->randomlyRotateLetters();
+	gameWord->setType(Word::Game);
 	this->addChild(gameWord);
 	
 

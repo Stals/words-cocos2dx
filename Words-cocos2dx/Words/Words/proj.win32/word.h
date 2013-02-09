@@ -8,8 +8,13 @@
 class Word : public cocos2d::CCLayer
 {
 public:
+	enum Type{
+		Game,
+		Player		
+	};
+
 	Word();
-	Word(std::string word);
+	Word(std::string word, Word::Type type);
 	~Word(void);
 
 	void initWithString(std::string word);
@@ -39,9 +44,13 @@ public:
 	void addContainedWord(std::string word);
 	// проверяет если ли слово среди тех что можно составить из букв слова - и есть в словаре
 	bool isContained(std::string word);
+
+	void setType(Word::Type type);
+	Word::Type getType();
 	
 private:
 	//std::vector<Letter*> letters;
 	std::set<std::string> contains;
+	Word::Type type;
 };
 

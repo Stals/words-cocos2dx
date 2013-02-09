@@ -2,6 +2,8 @@
 #include <string>
 #include "cocos2d.h"
 
+class GameLayer;
+
 class Letter : public cocos2d::CCSprite, public cocos2d::CCTargetedTouchDelegate {
 public:
 	Letter(char letter, size_t id);
