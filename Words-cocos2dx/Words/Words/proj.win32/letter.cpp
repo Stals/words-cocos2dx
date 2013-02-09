@@ -2,7 +2,7 @@
 #include "gameLayer.h"
 
 USING_NS_CC;
-Letter::Letter(char letter, size_t id): letter(letter), id(id){
+Letter::Letter(char letter, size_t id): letter(toupper(letter)), id(id){
 	// TODO - нужно либо делать rect метод чтобы правильный размер сделать
 	// либо он на автомате будет работать. я не знаю
 	CCSprite::init();
@@ -12,7 +12,7 @@ Letter::Letter(char letter, size_t id): letter(letter), id(id){
 	// TODO 1 раз получать - для всех использовать потом
 	CCSprite *letterImage = CCSprite::create("letter32_2.png");
 	letterImage->setScale(32 / letterImage->getContentSize().width);
-	char arr[2] = {toupper(letter), '\0'};
+	char arr[2] = {this->letter, '\0'};
 
 
 	//CCLabelTTF *letterLabel = CCLabelTTF::create(arr, "fonts/Schwarzwald Regular.ttf", 22);

@@ -116,6 +116,11 @@ void GameLayer::mainMenuAction(CCObject *pSender){
 
 
 void GameLayer::submitButtonAction(CCObject *pSender){
+	if(gameWord->isContained(playerWord->getString())){
+		gameWord->showWord();
+		playerWord->removeWord();
+	}
+		
 	// TODO - если слово подходит
 		// Очищаем слово игрока и покаываем все буквы у копа
 	// если нет

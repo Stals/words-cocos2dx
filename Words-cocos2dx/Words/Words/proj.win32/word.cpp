@@ -50,6 +50,10 @@ void Word::removeLetter(size_t id){
 	this->removeChildByTag(id, true);
 }
 
+void Word::removeWord(){
+	this->removeAllChildrenWithCleanup(true);
+}
+
 Letter* Word::getLetter(size_t id){
 	Letter* letter = dynamic_cast<Letter*>(this->getChildByTag(id));
 	return letter;
@@ -57,6 +61,19 @@ Letter* Word::getLetter(size_t id){
 
 void Word::showLetter(size_t id){
 	this->getChildByTag(id)->setVisible(true);
+}
+
+void Word::showWord(){
+	
+	if (m_pChildren && m_pChildren->count() > 0)
+    {
+        CCObject* pObject = NULL;
+        CCARRAY_FOREACH(m_pChildren, pObject)
+        {
+			Letter* pChild = dynamic_cast<Letter*>(pObject);
+			pChild->setVisible(true);
+		}
+	}
 }
 
 void Word::hideLetter(size_t id){
@@ -112,7 +129,7 @@ void Word::alignLettersHorizontallyWithPadding(float padding){
 
 void Word::randomlyRotateLetters(){
 	// на сколько градусов в каждую сотрону можно развенрнуть букву
-	const int range = 10;
+	const int range = 5;
 	if (m_pChildren && m_pChildren->count() > 0)
     {
         CCObject* pObject = NULL;
@@ -122,7 +139,7 @@ void Word::randomlyRotateLetters(){
             if (pChild)
             {
 				int r = rand() % (range * 2);
-				//pChild->runAction(CCRotateBy::create(0, r - range));
+				pChild->runAction(CCRotateBy::create(0, r - range));
 			}
 		}
 	}

@@ -23,9 +23,13 @@ public:
 	void appendLetter(char letter);
 	void appendLetter(Letter *letter);
 	void removeLetter(size_t id);
+	// deletes all letters
+	void removeWord();
 	Letter* getLetter(size_t id);
 
 	void showLetter(size_t id);
+	// делает все буквы в слове setVisible(true);
+	void showWord();
 	void hideLetter(size_t id);
 	
 	// Возвращает слово в виде строки
@@ -53,4 +57,5 @@ private:
 	std::set<std::string> contains;
 	Word::Type type;
 };
+
 
