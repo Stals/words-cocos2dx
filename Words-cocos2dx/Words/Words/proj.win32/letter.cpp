@@ -10,7 +10,7 @@ Letter::Letter(char letter, size_t id): letter(toupper(letter)), id(id){
 	this->autorelease();
 
 	// TODO 1 раз получать - для всех использовать потом
-	CCSprite *letterImage = CCSprite::create("letter32_2.png");
+	letterImage = CCSprite::create("letter32_2.png");
 	letterImage->setScale(32 / letterImage->getContentSize().width);
 	char arr[2] = {this->letter, '\0'};
 
@@ -55,31 +55,7 @@ void Letter::onExit(){
 }
 bool Letter::ccTouchBegan(CCTouch* touch, CCEvent* event){
 	if(this->isVisible()){
-
-		cocos2d::CCPoint touchLocation = touch->getLocationInView();
-		touchLocation = CCDirector::sharedDirector()->convertToGL(touchLocation);
-		touchLocation.x = touchLocation.x - (CCDirector::sharedDirector()->getWinSize().width/2);
-		//touchLocation = convertToNodeSpace(touchLocation);
-
-		float wigth = 32; //getContentSize().width;
-		float height = 32; //getContentSize().height;
-
-		//  получение габаритов кнопки 
-		cocos2d::CCPoint letterLocation = CCDirector::sharedDirector()->convertToGL(getPosition());
-		cocos2d::CCRect r ( letterLocation.x - wigth/2, 
-			letterLocation.y - (70 - wigth/2) - wigth, 
-			wigth, 
-			height );
-
-		/*
-		if(CCRect::CCRectContainsPoint(r, touchLocation)){
-		CCSprite *letterImage = CCSprite::create("letter32.png");
-		this->addChild(letterImage, 3);
-		}
-		*/
-
-		// если вернёт true - то дальше не пойдет
-		if (CCRect::CCRectContainsPoint(r, touchLocation)){
+		if (this->containsTouchLocation(touch)){
 			((GameLayer*)this->getParent()->getParent())->letterClicked(this);
 			return true;
 		}
@@ -95,10 +71,24 @@ void Letter::ccTouchEnded(CCTouch* touch, CCEvent* event){
 
 }
 
+bool Letter::containsTouchLocation(cocos2d::CCTouch *touch) {
+	CCPoint point = touch->locationInView();
+	return CCRect::CCRectContainsPoint(rect(),
+			this->convertTouchToNodeSpaceAR(touch));
+}
 
-/*
-// TODO  при определении точки еще нужно скорее всего учитывать padding - типо width + padding*id
-
-
-
-*/
+CCRect Letter::rect() {
+	CCRect c = CCRectMake(
+			(letterImage->getPosition().x
+					- (this->letterImage->getTextureRect().size.width / 2)
+							* this->letterImage->getScaleX()),
+			(letterImage->getPosition().y
+					- (this->letterImage->getTextureRect().size.height / 2)
+							* this->letterImage->getScaleY()),
+			this->letterImage->getTextureRect().size.width
+					* this->letterImage->getScaleX(),
+			this->letterImage->getTextureRect().size.height
+					* this->letterImage->getScaleY());
+					
+	return c;
+}

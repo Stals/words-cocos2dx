@@ -12,6 +12,8 @@ public:
 	char letter;
 
 private:
+	CCSprite *letterImage;
+
 	virtual void onEnter();
     virtual void onExit();
 
@@ -20,5 +22,8 @@ private:
 	virtual void ccTouchEnded(cocos2d::CCTouch* touch, cocos2d::CCEvent* event);
 
 	void registerWithTouchDispatcher();
+
+	bool containsTouchLocation(cocos2d::CCTouch *touch);
+	cocos2d::CCRect Letter::rect();
 };
 
