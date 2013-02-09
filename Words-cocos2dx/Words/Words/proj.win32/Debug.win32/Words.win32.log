@@ -1,22 +1,26 @@
-﻿Build started 08.02.2013 23:41:43.
+﻿Build started 09.02.2013 15:46:01.
      1>Project "C:\Users\Stals\Dropbox\Programming\BigProjects\C++\Workds-workingTitle\Words-cocos2dx\Words\Words\proj.win32\Words.win32.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug.win32\Words.win32.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS_DEBUG /D COCOS2D_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt titleLayer.cpp
-         titleLayer.cpp
-     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\titlelayer.cpp(35): warning C4996: 'cocos2d::CCSprite::spriteWithFile': was declared deprecated
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS_DEBUG /D COCOS2D_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt gameLayer.cpp
+         gameLayer.cpp
+     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\gamelayer.cpp(131): warning C4996: 'cocos2d::CCSprite::spriteWithFile': was declared deprecated
                  c:\users\stals\desktop\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes\ccsprite.h(180) : see declaration of 'cocos2d::CCSprite::spriteWithFile'
-     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\titlelayer.cpp(49): warning C4996: 'cocos2d::CCSprite::spriteWithFile': was declared deprecated
+     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\gamelayer.cpp(139): warning C4996: 'cocos2d::CCSprite::spriteWithFile': was declared deprecated
                  c:\users\stals\desktop\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes\ccsprite.h(180) : see declaration of 'cocos2d::CCSprite::spriteWithFile'
-     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\titlelayer.cpp(50): warning C4996: 'cocos2d::CCMenuItemSprite::itemWithNormalSprite': was declared deprecated
+     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\gamelayer.cpp(141): warning C4996: 'cocos2d::CCMenuItemSprite::itemWithNormalSprite': was declared deprecated
                  c:\users\stals\desktop\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes\ccmenuitem.h(284) : see declaration of 'cocos2d::CCMenuItemSprite::itemWithNormalSprite'
-     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\titlelayer.cpp(52): warning C4996: 'cocos2d::CCSprite::spriteWithFile': was declared deprecated
+     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\gamelayer.cpp(144): warning C4996: 'cocos2d::CCMenu::menuWithItems': was declared deprecated
+                 c:\users\stals\desktop\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes\ccmenu.h(80) : see declaration of 'cocos2d::CCMenu::menuWithItems'
+     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\gamelayer.cpp(160): warning C4996: 'cocos2d::CCSprite::spriteWithFile': was declared deprecated
                  c:\users\stals\desktop\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes\ccsprite.h(180) : see declaration of 'cocos2d::CCSprite::spriteWithFile'
-     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\titlelayer.cpp(54): warning C4996: 'cocos2d::CCMenuItemSprite::itemWithNormalSprite': was declared deprecated
+     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\gamelayer.cpp(161): warning C4996: 'cocos2d::CCSprite::spriteWithFile': was declared deprecated
+                 c:\users\stals\desktop\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes\ccsprite.h(180) : see declaration of 'cocos2d::CCSprite::spriteWithFile'
+     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\gamelayer.cpp(163): warning C4996: 'cocos2d::CCMenuItemSprite::itemWithNormalSprite': was declared deprecated
                  c:\users\stals\desktop\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes\ccmenuitem.h(284) : see declaration of 'cocos2d::CCMenuItemSprite::itemWithNormalSprite'
-     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\titlelayer.cpp(57): warning C4996: 'cocos2d::CCMenu::menuWithItems': was declared deprecated
+     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\gamelayer.cpp(166): warning C4996: 'cocos2d::CCMenu::menuWithItems': was declared deprecated
                  c:\users\stals\desktop\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes\ccmenu.h(80) : see declaration of 'cocos2d::CCMenu::menuWithItems'
      1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\boost\math\special_functions\fpclassify.hpp(101): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\boost\math\special_functions\fpclassify.hpp(528) : see reference to function template instantiation 'bool boost::math_detail::is_nan_helper<float>(T,const boost::true_type &)' being compiled
@@ -74,4 +78,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:09.00
+Time Elapsed 00:00:09.28

@@ -64,7 +64,7 @@ bool Letter::ccTouchBegan(CCTouch* touch, CCEvent* event){
 	//  получение габаритов кнопки 
 	cocos2d::CCPoint letterLocation = CCDirector::sharedDirector()->convertToGL(getPosition());
 	cocos2d::CCRect r ( letterLocation.x - wigth/2, 
-		       letterLocation.y - (50 - wigth/2) - wigth, 
+		       letterLocation.y - (70 - wigth/2) - wigth, 
 			   wigth, 
 			   height );
 	

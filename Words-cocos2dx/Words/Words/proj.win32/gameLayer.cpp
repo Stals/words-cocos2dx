@@ -96,9 +96,9 @@ bool GameLayer::init(){
 
 	setupBackGround();
 	setupTopButtons();
-	setupSubmitButton();
 	setupPlayerWord();
 	startNewGame();
+	setupSubmitButton();
 
 	Letter *letter = this->gameWord->getLetter(1);
 	letter->setVisible(false);
@@ -128,7 +128,7 @@ void GameLayer::setupBackGround(){
     CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
 	/* BackGround image */
-	CCSprite *backImage = CCSprite::spriteWithFile("menu/bg_darkwood_3.jpg");
+	CCSprite *backImage = CCSprite::spriteWithFile("menu/bg_game4.jpg");
     backImage->setPosition(ccp(windowSize.width/2, windowSize.height/2));
     this->addChild(backImage);
 }
@@ -136,7 +136,7 @@ void GameLayer::setupBackGround(){
 void GameLayer::setupTopButtons(){
 	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
-	CCSprite *toMainMenuSprite = CCSprite::spriteWithFile("toMainMenu.png");
+	CCSprite *toMainMenuSprite = CCSprite::spriteWithFile("toMainMenu2.png");
 	CCMenuItemSprite *mainMenuButton = CCMenuItemSprite::itemWithNormalSprite(toMainMenuSprite, toMainMenuSprite, toMainMenuSprite,
 		this, menu_selector(GameLayer::mainMenuAction));
 
@@ -145,8 +145,8 @@ void GameLayer::setupTopButtons(){
 	//menu->alignItemsVerticallyWithPadding(20);
 
 
-	menu->setPosition(ccp(toMainMenuSprite->getContentSize().width/2,
-							windowSize.height - toMainMenuSprite->getContentSize().height/2));
+	menu->setPosition(ccp(windowSize.width - (toMainMenuSprite->getContentSize().width/2) - 7,
+							windowSize.height - (toMainMenuSprite->getContentSize().height/2) - 5));
 
 	// Set position of menu to be below the title text
 	//menu->setPosition(ccp(0/*(-windowSize.width/4) + (menu->getContentSize().width)*/ , 0));
@@ -166,9 +166,10 @@ void GameLayer::setupSubmitButton(){
 	CCMenu *menu = CCMenu::menuWithItems(submitButton, NULL);
 	//menu->alignItemsVerticallyWithPadding(20);
 
+	menu->setPositionX(windowSize.width/2);
+	menu->setPositionY(((gameWord->getPositionY() + playerWord->getPositionY()) / 2) /*- (submitSprite->getContentSize().height / 2)*/);
 
-	menu->setPosition(ccp(windowSize.width/2,
-						  windowSize.height/2));
+
 	this->addChild(menu);
 
 }
@@ -194,7 +195,7 @@ void GameLayer::startNewGame(){
 
 	gameWord = db.getRandomWord();
 	gameWord->alignLettersHorizontallyWithPadding(42);
-	gameWord->setPosition(windowSize.width/2, windowSize.height - 50);
+	gameWord->setPosition(windowSize.width/2, windowSize.height - 70);
 	gameWord->randomlyRotateLetters();
 	this->addChild(gameWord);
 	
