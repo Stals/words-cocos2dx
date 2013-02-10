@@ -22,6 +22,7 @@ bool GameLayer::init(){
 	gameWord = NULL;
 	playerWord = NULL;
 	score = 0;
+	timer = 120;
 	
 // TODO
 // когда я кликаю - буква уже добавилась у игрока. - но она visible(false)
@@ -102,6 +103,7 @@ bool GameLayer::init(){
 	startNewGame();
 	setupSubmitButton();
 	setupScore();
+	setupTimer();
 
 	//Letter *letter = this->gameWord->getLetter(1);
 	//this->letterClicked(letter);
@@ -121,6 +123,7 @@ void GameLayer::mainMenuAction(CCObject *pSender){
 void GameLayer::submitButtonAction(CCObject *pSender){
 	if(gameWord->isContained(playerWord->getString())){		
 		addScore(playerWord->getLength() * 50);
+		gameWord->removeContainedWord(playerWord->getString());
 
 		gameWord->showWord();
 		playerWord->removeWord();
@@ -227,6 +230,20 @@ void GameLayer::setupScore(){
 	this->addChild(scoreLabel);
 }
 
+void GameLayer::setupTimer(){
+	timerLabel = CCLabelTTF::create("0", "Arial", 18, CCSize(215, 18), kCCTextAlignmentRight);
+	timerLabel->setColor(ccc3(208,192,143));
+
+	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
+	timerLabel->setPositionY(windowSize.height - (timerLabel->getContentSize().height/2) - 10);
+	timerLabel->setPositionX(177);
+	updateTimer(0);
+	this->addChild(timerLabel);
+
+
+	this->schedule( schedule_selector(GameLayer::updateTimer), 1.0 );
+}
+
 void GameLayer::startNewGame(){	
 	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
@@ -244,12 +261,39 @@ void GameLayer::startNewGame(){
 	this->addChild(gameWord);
 }
 
-
+void GameLayer::gameOver(){
+	// TODO скорее всего поверх добавить GameOverLayer
+	// На котором будет Score финальный, кнопки newGame и Main Menu
+}
 
 void GameLayer::addScore(int n){
 	score += n;
 	char arr[16];
 	itoa(score, arr, 10);
 	scoreLabel->setString(arr);
+}
+
+void GameLayer::updateTimer(float dt){
+	timer -= 1;
+
+	int min = timer / 60;
+	int sec = timer - (min * 60);
+	char arr[16];
+	
+	if(min > 0){
+		if(sec >= 10)
+			sprintf(arr, "%i:%i", min, sec);
+		else
+			sprintf(arr, "%i:0%i", min, sec);
+	}
+	else
+		sprintf(arr, "%i", sec); 
+
+	timerLabel->setString(arr);
+
+	if(timer == 0){
+		this->unschedule(schedule_selector(GameLayer::updateTimer));
+		gameOver();
+	}
 }
 

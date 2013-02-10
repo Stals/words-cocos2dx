@@ -30,6 +30,8 @@ private:
 
 	int score;
 	cocos2d::CCLabelTTF *scoreLabel;
+	int timer;
+	cocos2d::CCLabelTTF *timerLabel;
 
 
 	void setupBackGround();
@@ -37,10 +39,14 @@ private:
 	void setupSubmitButton();
 	void setupPlayerWord();
 	void setupScore();
+	void setupTimer();
 
 	void startNewGame();
+	void gameOver();
 
 	// Добавляет n очков к score. И отображает это игроку
 	void addScore(int n);
+	// Обновляет таймер
+	void updateTimer(float dt);
 };
 
