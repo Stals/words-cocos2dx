@@ -21,6 +21,8 @@ CCScene* GameLayer::scene()
 bool GameLayer::init(){
 	gameWord = NULL;
 	playerWord = NULL;
+	score = 0;
+	
 // TODO
 // когда я кликаю - буква уже добавилась у игрока. - но она visible(false)
 // когда фейковая буква до туда долетает - мы просто её удаляем и делаем visible(true). 
@@ -99,6 +101,7 @@ bool GameLayer::init(){
 	setupPlayerWord();
 	startNewGame();
 	setupSubmitButton();
+	setupScore();
 
 	//Letter *letter = this->gameWord->getLetter(1);
 	//this->letterClicked(letter);
@@ -116,11 +119,13 @@ void GameLayer::mainMenuAction(CCObject *pSender){
 
 
 void GameLayer::submitButtonAction(CCObject *pSender){
-	if(gameWord->isContained(playerWord->getString())){
+	if(gameWord->isContained(playerWord->getString())){		
+		addScore(playerWord->getLength() * 50);
+
 		gameWord->showWord();
 		playerWord->removeWord();
 	}
-		
+
 	// TODO - если слово подходит
 		// Очищаем слово игрока и покаываем все буквы у копа
 	// если нет
@@ -210,6 +215,18 @@ void GameLayer::setupPlayerWord(){
 	this->addChild(playerWord);
 }
 
+
+void GameLayer::setupScore(){
+	//scoreLabel = CCLabelTTF::create("Hello there this is a text", "Arial", 25);
+	scoreLabel = CCLabelTTF::create("0", "Arial", 18, CCSize(215, 18), kCCTextAlignmentRight);
+	scoreLabel->setColor(ccc3(208,192,143));
+	
+	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
+	scoreLabel->setPositionY(windowSize.height - (scoreLabel->getContentSize().height/2) - 10);
+
+	this->addChild(scoreLabel);
+}
+
 void GameLayer::startNewGame(){	
 	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
@@ -225,7 +242,14 @@ void GameLayer::startNewGame(){
 	gameWord->randomlyRotateLetters();
 	gameWord->setType(Word::Game);
 	this->addChild(gameWord);
-	
+}
 
+
+
+void GameLayer::addScore(int n){
+	score += n;
+	char arr[16];
+	itoa(score, arr, 10);
+	scoreLabel->setString(arr);
 }
 

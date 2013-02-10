@@ -95,6 +95,10 @@ std::string Word::getString(){
 	return result;
 }
 
+size_t Word::getLength(){
+	return this->getChildrenCount();
+}
+
 void Word::alignLettersHorizontallyWithPadding(float padding){
     float width = -padding;
     if (m_pChildren && m_pChildren->count() > 0)

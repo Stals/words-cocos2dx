@@ -24,14 +24,23 @@ public:
 	void letterClicked(Letter *letter);
 
 private:
+	DB db;
+	Word* gameWord;
+	Word* playerWord;
+
+	int score;
+	cocos2d::CCLabelTTF *scoreLabel;
+
+
 	void setupBackGround();
 	void setupTopButtons();
 	void setupSubmitButton();
 	void setupPlayerWord();
+	void setupScore();
 
 	void startNewGame();
-	DB db;
-	Word* gameWord;
-	Word* playerWord;
+
+	// Добавляет n очков к score. И отображает это игроку
+	void addScore(int n);
 };
 

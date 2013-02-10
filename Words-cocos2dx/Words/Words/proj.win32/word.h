@@ -34,6 +34,7 @@ public:
 	
 	// Возвращает слово в виде строки
 	std::string getString();
+	size_t getLength();
 
 	void alignLettersHorizontallyWithPadding(float padding);
 	void randomlyRotateLetters();
