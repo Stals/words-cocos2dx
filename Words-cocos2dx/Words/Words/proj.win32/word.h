@@ -46,7 +46,9 @@ public:
 	void registerWithTouchDispatcher();
 
 	// Добавить слово, которе входит в этом слово
-	void addContainedWord(std::string word);
+	void addContainedWord(const std::string &word);
+	// убирает слово из списка входящих в него. Используется для того чтобы игрок не мог несколько раз сказать одно и тоже слово
+	void removeContainedWord(const std::string &word);
 	// проверяет если ли слово среди тех что можно составить из букв слова - и есть в словаре
 	bool isContained(std::string word);
 

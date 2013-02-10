@@ -168,8 +168,15 @@ void Word::registerWithTouchDispatcher(){
 	CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, false); // false
 }
 
-void Word::addContainedWord(std::string word){
+void Word::addContainedWord(const std::string &word){
 	contains.insert(word);
+}
+
+void Word::removeContainedWord(const std::string &word){
+	std::set<std::string>::iterator it = contains.find(word);
+	if(it != contains.end()){
+		contains.erase(it);	
+	}
 }
 
 bool Word::isContained(std::string word){
