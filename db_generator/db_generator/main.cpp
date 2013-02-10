@@ -46,7 +46,7 @@ void calcWord(Word &word, std::vector<Word> &dict){
 		if(word.length() >= other.length()){
 			if(word != other){
 				if(word.contains(other)){
-					word.ids.push_back(wordId);
+					word.ids.push_back(wordId + 1);
 				}
 			}
 		}
