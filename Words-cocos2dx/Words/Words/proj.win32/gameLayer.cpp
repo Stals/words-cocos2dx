@@ -87,7 +87,7 @@ void GameLayer::setupBackGround(){
     CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
 	/* BackGround image */
-	CCSprite *backImage = CCSprite::spriteWithFile("menu/bg_game4.png");
+	CCSprite *backImage = CCSprite::create("menu/bg_game4.png");
     backImage->setPosition(ccp(windowSize.width/2, windowSize.height/2));
     this->addChild(backImage);
 }
@@ -95,7 +95,7 @@ void GameLayer::setupBackGround(){
 void GameLayer::setupTopButtons(){
 	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
-	CCSprite *toMainMenuSprite = CCSprite::spriteWithFile("toMainMenu2.png");
+	CCSprite *toMainMenuSprite = CCSprite::create("toMainMenu2.png");
 	CCMenuItemSprite *mainMenuButton = CCMenuItemSprite::itemWithNormalSprite(toMainMenuSprite, toMainMenuSprite, toMainMenuSprite,
 		this, menu_selector(GameLayer::mainMenuAction));
 
@@ -116,8 +116,8 @@ void GameLayer::setupTopButtons(){
 void GameLayer::setupSubmitButton(){
 	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
-	CCSprite *submitSprite = CCSprite::spriteWithFile("submit2.png");
-	CCSprite *submitPressedSprite = CCSprite::spriteWithFile("submit_pressed2.png");
+	CCSprite *submitSprite = CCSprite::create("submit2.png");
+	CCSprite *submitPressedSprite = CCSprite::create("submit_pressed2.png");
 	CCMenuItemSprite *submitButton = CCMenuItemSprite::itemWithNormalSprite(submitSprite, submitPressedSprite, submitSprite,
 		this, menu_selector(GameLayer::submitButtonAction));
 

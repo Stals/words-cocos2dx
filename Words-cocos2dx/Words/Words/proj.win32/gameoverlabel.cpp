@@ -41,11 +41,11 @@ void GameOverLayer::setupButtons(){
 	// Get window size
 	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
-	CCSprite *newGameSprite = CCSprite::spriteWithFile("menu/new_game.png");
+	CCSprite *newGameSprite = CCSprite::create("menu/new_game.png");
 	CCMenuItemSprite *newGameButton = CCMenuItemSprite::itemWithNormalSprite(newGameSprite, newGameSprite, newGameSprite,
 		this, menu_selector(GameOverLayer::newGameAction));
 
-	CCSprite *mainMenuSprite = CCSprite::spriteWithFile("menu/main_menu.png");
+	CCSprite *mainMenuSprite = CCSprite::create("menu/main_menu.png");
 	CCMenuItemSprite *mainMenuButton = CCMenuItemSprite::itemWithNormalSprite(mainMenuSprite, mainMenuSprite, mainMenuSprite,
 		this, menu_selector(GameOverLayer::mainMenuAction));
 
