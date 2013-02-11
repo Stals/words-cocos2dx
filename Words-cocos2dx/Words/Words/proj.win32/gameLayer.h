@@ -3,6 +3,7 @@
 #include "db.h"
 
 #include "word.h"
+#include "gameoverlabel.h"
 
 class GameLayer : public cocos2d::CCLayer
 {
@@ -16,7 +17,6 @@ public:
 	// implement the "static node()" method manually
 	CREATE_FUNC(GameLayer);
     
-	void playAgainAction(CCObject *pSender);
 	void mainMenuAction(CCObject *pSender);
 	void submitButtonAction(CCObject *pSender);
 
@@ -44,9 +44,10 @@ private:
 	void startNewGame();
 	void gameOver();
 
-	// Добавляет n очков к score. И отображает это игроку
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ n пїЅпїЅпїЅпїЅпїЅ пїЅ score. пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	void addScore(int n);
-	// Обновляет таймер
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	void updateTimer(float dt);
+	void addTime(int seconds);
 };
 
