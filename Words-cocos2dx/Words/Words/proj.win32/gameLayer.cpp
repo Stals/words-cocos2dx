@@ -19,84 +19,16 @@ CCScene* GameLayer::scene()
 }
 
 bool GameLayer::init(){
-	gameWord = NULL;
-	playerWord = NULL;
-	score = 0;
-	timer = 120;
-	
-// TODO
-// ����� � ������ - ����� ��� ���������� � ������. - �� ��� visible(false)
-// ����� �������� ����� �� ���� �������� - �� ������ �� ������� � ������ visible(true). 
-
 	if ( !CCLayer::init() )
 	{
 		return false;
 	}
-    
-    //this->setIsTouchEnabled(true);
 
-	/* Title */
-	//CCSprite *titleImage = CCSprite::spriteWithFile("menu/title.png");
-	
-	//titleImage->setPosition(ccp(windowSize.width/2, windowSize.height - 50)); // 50 - title height
-    //this->addChild(titleImage, 1);
-    
-
-	/* Menu */
- //   // Create "play," "scores," and "controls" buttons - when tapped, they call methods we define: playButtonAction and scoresButtonAction
-	//CCSprite *newGameSprite = CCSprite::spriteWithFile("menu/new_game_2.png");
-	//CCMenuItemSprite *newGameButton = CCMenuItemSprite::itemWithNormalSprite(newGameSprite, newGameSprite, newGameSprite, this, menu_selector(TitleLayer::newGameAction));
-
-	//CCSprite *leaderboardSprite = CCSprite::spriteWithFile("menu/leaderboard_2.png");
-	//CCMenuItemSprite *leaderboardButton = CCMenuItemSprite::itemWithNormalSprite(leaderboardSprite, leaderboardSprite, leaderboardSprite,
-	//	this, menu_selector(TitleLayer::leaderboardAction));
-
- //  
-	//CCMenu *menu = CCMenu::menuWithItems(newGameButton, leaderboardButton, NULL);
-	//menu->alignItemsVerticallyWithPadding(20);
- //   
-	//// Set position of menu to be below the title text
- //   menu->setPosition(ccp(windowSize.width / 2, 100));
-
- //   // Add menu to layer
- //   this->addChild(menu, 2);
- //       
-
-	///* testing */
-	///*Letter *letter = new Letter("W");
-	//letter->setPosition(ccp(windowSize.width - 50, windowSize.height - 50));
-	//letter->runAction(CCRotateBy::create(10, 360));
-	//this->addChild(letter);*/
-
-	//Word *PcWord = new Word("123LONGWORD");
-	//PcWord->alignLettersHorizontallyWithPadding(42);
-	//PcWord->setPosition(ccp(windowSize.width/2, windowSize.height - 50));
-	//PcWord->randomlyRotateLetters();
-
-	//Word *PlayerWord = new Word("WORDS");
-	//PlayerWord->alignLettersHorizontallyWithPadding(42);
-	//PlayerWord->setPosition(ccp(windowSize.width/2, 50));
-	//PlayerWord->randomlyRotateLetters();
-
-	//this->addChild(PcWord);
-	//this->addChild(PlayerWord);
-
-
-	// TODO - �� ������ ������� �����. - ��� � ����� ������ ����
-
-	//Word * dbWord = db.getRandomWord();
-	//dbWord->alignLettersHorizontallyWithPadding(42);
-	//dbWord->setPosition(ccp(windowSize.width/2, windowSize.height - 50));
-	//dbWord->randomlyRotateLetters();
-	//this->addChild(dbWord);
-
-
-	//
-	//gameWord = new Word;
-	//gameWord->setPosition(ccp(windowSize.width/2, windowSize.height - 50));
-	//playerWord = new Word;
-	//playerWord->setPosition(ccp(windowSize.width/2, 50));
-
+	gameWord = NULL;
+	playerWord = NULL;
+	score = 0;
+	timer = 120;
+	    
 	setupBackGround();
 	setupTopButtons();
 	setupPlayerWord();
@@ -105,15 +37,9 @@ bool GameLayer::init(){
 	setupScore();
 	setupTimer();
 
-	//Letter *letter = this->gameWord->getLetter(1);
-	//this->letterClicked(letter);
-
 	return true;
 }
 
-void GameLayer::playAgainAction(CCObject *pSender){
-	//CCDirector::sharedDirector()->replaceScene(GameLayer::scene());
-}
 
 void GameLayer::mainMenuAction(CCObject *pSender){
 	CCDirector::sharedDirector()->replaceScene(TitleLayer::scene());
@@ -262,8 +188,9 @@ void GameLayer::startNewGame(){
 }
 
 void GameLayer::gameOver(){
-	// TODO ������ ����� ������ �������� GameOverLayer
-	// �� ������� ����� Score ���������, ������ newGame � Main Menu
+	GameOverLayer *gameOverLayer = new GameOverLayer(score);
+	gameOverLayer->autorelease();
+	this->addChild(gameOverLayer);
 }
 
 void GameLayer::addScore(int n){

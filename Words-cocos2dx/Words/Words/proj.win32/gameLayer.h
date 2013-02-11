@@ -3,6 +3,7 @@
 #include "db.h"
 
 #include "word.h"
+#include "gameoverlabel.h"
 
 class GameLayer : public cocos2d::CCLayer
 {
@@ -16,7 +17,6 @@ public:
 	// implement the "static node()" method manually
 	CREATE_FUNC(GameLayer);
     
-	void playAgainAction(CCObject *pSender);
 	void mainMenuAction(CCObject *pSender);
 	void submitButtonAction(CCObject *pSender);
 

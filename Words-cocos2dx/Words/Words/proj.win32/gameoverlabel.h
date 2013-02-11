@@ -11,7 +11,7 @@ public:
 private:
 	// Полупрозрачный слой размером с экран
 	cocos2d::CCLayerColor *bg;
-	cocos2d::CCLaberTTF *scoreLabel;
+	cocos2d::CCLabelTTF *scoreLabel;
 	cocos2d::CCMenu *menu;
 
 	void setupBackground();
