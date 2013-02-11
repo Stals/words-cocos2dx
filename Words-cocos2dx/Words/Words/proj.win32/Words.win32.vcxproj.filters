@@ -100,6 +100,9 @@
     <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3ext.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="gameoverlabel.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -136,6 +139,9 @@
     <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\transaction.cc" />
     <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\util.cc" />
     <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3.c">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="gameoverlabel.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
