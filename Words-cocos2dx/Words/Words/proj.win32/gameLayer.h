@@ -22,6 +22,7 @@ public:
 
 	// if gameWord was clicked - append to player, if gameword was clicked - then return it back
 	void letterClicked(Letter *letter);
+	void deleteLetter(cocos2d::CCNode *letter);
 
 private:
 	DB db;
@@ -49,5 +50,8 @@ private:
 	// ��������� ������
 	void updateTimer(float dt);
 	void addTime(int seconds);
+
+	// hides 'from' creates a sprite and moves it to 'to' settting 'to' visibility to true 
+	void moveLetter(Letter* from, Letter* to);
 };
 

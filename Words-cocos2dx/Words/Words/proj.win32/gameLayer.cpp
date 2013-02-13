@@ -51,36 +51,42 @@ void GameLayer::submitButtonAction(CCObject *pSender){
 		addScore(playerWord->getLength() * 50);
 		gameWord->removeContainedWord(playerWord->getString());
 
-		gameWord->showWord();
+		CCArray *letters = playerWord->getChildren();
+		for(int i = 0; i < playerWord->getChildrenCount(); ++i){
+			Letter *from = (Letter*)letters->objectAtIndex(i);
+			moveLetter(from, gameWord->getLetter(from->id));
+		}
+		
 		playerWord->removeWord();
+		//gameWord->showWord();
 	}
-
-	// TODO - ���� ����� ��������
-		// ������� ����� ������ � ��������� ��� ����� � ����
-	// ���� ���
-		// ������� ��� ����� �� �������� - ���� �� ���� ���, �� ������ �� ������, ����� ����� ���������� ��� ���� ����.
 }
 
 
 void GameLayer::letterClicked(Letter *letter){
+	Letter* newLetter = NULL;
 	Word *clickedWord = (Word*)letter->getParent();
 
 	Word::Type wordType = clickedWord->getType();
 	switch(wordType){
 	case Word::Game:
-		playerWord->appendLetter(letter);
-		letter->setVisible(false);
+		newLetter = playerWord->appendLetter(letter);
 		playerWord->alignLettersHorizontallyWithPadding(42);
+		newLetter->setVisible(false);
+		this->moveLetter(letter, newLetter);
 		break;
+
 	case Word::Player:
+		moveLetter(letter, gameWord->getLetter(letter->id));	
 		letter->removeFromParentAndCleanup(true);
 		playerWord->alignLettersHorizontallyWithPadding(42);
-		gameWord->getLetter(letter->id)->setVisible(true);
-		//playerWord->removeLetter(letter->id);
-
 		break;
 	}
 
+}
+
+void GameLayer::deleteLetter(CCNode *letter){
+	letter->removeFromParentAndCleanup(true);
 }
 
 void GameLayer::setupBackGround(){
@@ -232,3 +238,23 @@ void GameLayer::addTime(int seconds){
 	// делаем schedule уменьшения видимости этого label'a
 }
 
+void GameLayer::moveLetter(Letter* from, Letter* to){
+	//CCPoint fromPoint = gameWord->convertToWorldSpace(from->getPosition());
+	CCPoint fromPoint = from->getParent()->convertToWorldSpace(from->getPosition());	
+	//CCPoint toPoint = playerWord->convertToWorldSpace(to->getPosition());
+	CCPoint toPoint = to->getParent()->convertToWorldSpace(to->getPosition());
+
+	from->setVisible(false);
+
+	Letter* movingLetter = new Letter(from->letter, from->id);
+	movingLetter->setPosition(fromPoint); // это позиция относительно Word мне кажется а мне нужна относительно gameLayer
+	this->addChild(movingLetter);
+	//CCJumpTo* move = CCJumpTo::create(1, toPoint, 10, 50);
+	CCMoveTo* move = CCMoveTo::create(0.5, toPoint);
+	CCCallFuncN* remove = cocos2d::CCCallFuncN ::create(movingLetter, callfuncN_selector(GameLayer::deleteLetter));
+	
+	movingLetter->runAction(cocos2d::CCSequence::create(move, remove, NULL));// CCJumpBy::create(1.0, to->getPosition(), 10, 5));
+	to->runAction(CCBlink::create(1, 1));
+
+
+}

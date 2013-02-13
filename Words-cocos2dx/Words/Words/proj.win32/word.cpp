@@ -34,16 +34,18 @@ void Word::initWithString(std::string word){
 	}
 }
 
-void Word::appendLetter(char l){
+Letter* Word::appendLetter(char l){
 	int id = this->getChildrenCount();
 	Letter *letter = new Letter(l, id);
 	this->addChild(letter, 0, id);
+	return letter;
 }
 
-void Word::appendLetter(Letter *letter){
+Letter* Word::appendLetter(Letter *letter){
 	int id = this->getChildrenCount();
 	Letter *l = new Letter(letter->letter, letter->id);
 	this->addChild(l, 0, id);
+	return l;
 }
 
 void Word::removeLetter(size_t id){

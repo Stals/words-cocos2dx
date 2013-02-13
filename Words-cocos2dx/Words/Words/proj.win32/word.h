@@ -20,8 +20,8 @@ public:
 	void initWithString(std::string word);
 
 	// нужно делать alighn заново!
-	void appendLetter(char letter);
-	void appendLetter(Letter *letter);
+	Letter* appendLetter(char letter);
+	Letter* appendLetter(Letter *letter);
 	void removeLetter(size_t id);
 	// deletes all letters
 	void removeWord();
