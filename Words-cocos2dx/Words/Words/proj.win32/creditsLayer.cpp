@@ -1,5 +1,6 @@
 #include "creditsLayer.h"
 #include "titleLayer.h"
+#include "word.h"
 
 USING_NS_CC;
 CCScene* CreditsLayer::scene()
@@ -28,9 +29,10 @@ bool CreditsLayer::init()
 {
 
 	CCLayer::init();	
-	//this->setTouchEnabled(true);
+	this->setTouchEnabled(true);
 	setupBackground();
 	setupText();
+	setupWords();
 	setupButtons();
 	return true;
 }
@@ -48,9 +50,9 @@ void CreditsLayer::setupBackground(){
 void CreditsLayer::setupText(){
 		CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
-std::string str = "Programming and art\n"
+std::string str = "\n" //Programming and art
 	"Stanislav Korotaev\n"
-"Music\n"
+"\n" //MUSIC
 "Remaxim (opengameart.org/users/remaxim):\n"
 		"Golden Wings\n"
 		"Town Theme\n"
@@ -67,6 +69,29 @@ text = CCLabelTTF::create(str.c_str(), "Sylfaen", 17, CCSizeMake(500,500), kCCTe
 	text->setPosition(ccp(windowSize.width / 2, 70));
 
 this->addChild(text);
+}
+
+void CreditsLayer::setupWords(){
+	CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
+
+	Word *prog = new Word("Programming and Art", Word::Player);
+	prog->alignLettersHorizontallyWithPadding(42);
+	prog->randomlyRotateLetters();
+
+	prog->setScale(0.5);
+	prog->setPosition(ccp(120, 225));
+
+	
+	Word *music = new Word("MUSIC", Word::Player);
+	music->alignLettersHorizontallyWithPadding(42);
+	music->randomlyRotateLetters();
+
+	music->setScale(0.5);
+	music->setPosition(ccp(120, 185));
+
+
+	this->addChild(prog);
+	this->addChild(music);
 }
 
 void CreditsLayer::setupButtons(){
@@ -98,23 +123,22 @@ void CreditsLayer::mainMenuAction(CCObject *pSender){
 	CCDirector::sharedDirector()->replaceScene(TitleLayer::scene());
 }
 
-/*
-bool GameOverLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent){
+
+bool CreditsLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent){
 	// Так как тач уже был в меню - мы можем не пропустить его дальше 
 	// (При таком варианте можно будет нажать кнопку MainMenu справа сверху, но это не критично)
 	return true;
 }
 
-void GameOverLayer::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent){
+void CreditsLayer::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent){
 }
 
-void GameOverLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent){
+void CreditsLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent){
 }
 
-void GameOverLayer::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent){
+void CreditsLayer::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent){
 }
 
-void GameOverLayer::registerWithTouchDispatcher(){
+void CreditsLayer::registerWithTouchDispatcher(){
 	CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, -126, true);
 }
-*/

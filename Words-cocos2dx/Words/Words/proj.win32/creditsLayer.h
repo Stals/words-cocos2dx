@@ -21,15 +21,16 @@ private:
 
 	void setupBackground();
 	void setupText();
+	void setupWords();
 	void setupButtons();
 
 	void mainMenuAction(CCObject *pSender);
 
-	/*
+	
     virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
 	virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
 	virtual void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
 	virtual void ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent);
     virtual void registerWithTouchDispatcher();
-	*/
+	
 };
