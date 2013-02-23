@@ -1,4 +1,4 @@
-﻿Build started 23.02.2013 15:47:17.
+﻿Build started 23.02.2013 16:00:51.
      1>Project "C:\Users\Stals\Dropbox\Programming\BigProjects\C++\Workds-workingTitle\Words-cocos2dx\Words\Words\proj.win32\Words.win32.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug.win32\Words.win32.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -8,9 +8,9 @@
          creditsLayer.cpp
      1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\creditslayer.cpp(42): warning C4996: 'cocos2d::CCSprite::spriteWithFile': was declared deprecated
                  c:\users\stals\desktop\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes\ccsprite.h(180) : see declaration of 'cocos2d::CCSprite::spriteWithFile'
-     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\creditslayer.cpp(74): warning C4996: 'cocos2d::CCMenuItemSprite::itemWithNormalSprite': was declared deprecated
+     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\creditslayer.cpp(82): warning C4996: 'cocos2d::CCMenuItemSprite::itemWithNormalSprite': was declared deprecated
                  c:\users\stals\desktop\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes\ccmenuitem.h(284) : see declaration of 'cocos2d::CCMenuItemSprite::itemWithNormalSprite'
-     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\creditslayer.cpp(77): warning C4996: 'cocos2d::CCMenu::menuWithItems': was declared deprecated
+     1>c:\users\stals\dropbox\programming\bigprojects\c++\workds-workingtitle\words-cocos2dx\words\words\proj.win32\creditslayer.cpp(85): warning C4996: 'cocos2d::CCMenu::menuWithItems': was declared deprecated
                  c:\users\stals\desktop\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes\ccmenu.h(80) : see declaration of 'cocos2d::CCMenu::menuWithItems'
        ResourceCompile:
          All outputs are up-to-date.
@@ -52,4 +52,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:06.20
+Time Elapsed 00:00:05.37

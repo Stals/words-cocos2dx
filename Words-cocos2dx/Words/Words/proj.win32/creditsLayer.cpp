@@ -46,19 +46,27 @@ void CreditsLayer::setupBackground(){
 
 
 void CreditsLayer::setupText(){
-	/*std::string str = "Programming and art"
-	"Stanislav Korotaev"
-"Music"
-	"Remaxim: opengameart.org/users/remaxim"
-		"Golden Wings"
-		"Town Theme"
-		"Old City Theme"
-	"Brendan Kinsella"
-		"Mozart Piano Sonata in B-flat major III Allegretto Grazioso"
-	"Kevin MacLeod"
-		"J.S. Bach Prelude in C";
+		CCSize windowSize = CCDirector::sharedDirector()->getWinSize();
 
-	//text = CCLabelTTF::create(str, */
+std::string str = "Programming and art\n"
+	"Stanislav Korotaev\n"
+"Music\n"
+"Remaxim (opengameart.org/users/remaxim):\n"
+		"Golden Wings\n"
+		"Town Theme\n"
+		"Old City Theme\n\n"
+		"Brendan Kinsella:\n"
+		"Mozart Piano Sonata in B-flat major III Allegretto Grazioso\n\n"
+		"Kevin MacLeod:\n"
+		"J.S. Bach Prelude in C\n";
+
+text = CCLabelTTF::create(str.c_str(), "Sylfaen", 17, CCSizeMake(500,500), kCCTextAlignmentCenter);
+	
+
+	// Set position of menu to be below the title text
+	text->setPosition(ccp(windowSize.width / 2, 70));
+
+this->addChild(text);
 }
 
 void CreditsLayer::setupButtons(){
@@ -78,7 +86,7 @@ void CreditsLayer::setupButtons(){
 
 
 	// Set position of menu to be below the title text
-	menu->setPosition(ccp(windowSize.width / 2, 100));
+	menu->setPosition(ccp(windowSize.width / 2, 20));
 
 	// Add menu to layer
 	this->addChild(menu, 2);
