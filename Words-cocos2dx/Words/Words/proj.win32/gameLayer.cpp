@@ -255,6 +255,4 @@ void GameLayer::moveLetter(Letter* from, Letter* to){
 	
 	movingLetter->runAction(cocos2d::CCSequence::create(move, remove, NULL));// CCJumpBy::create(1.0, to->getPosition(), 10, 5));
 	to->runAction(CCBlink::create(1, 1));
-
-
 }

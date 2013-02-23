@@ -145,6 +145,7 @@
     <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3ext.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="creditsLayer.h" />
     <ClInclude Include="db.h" />
     <ClInclude Include="gameLayer.h" />
     <ClInclude Include="gameoverlabel.h" />
@@ -168,6 +169,7 @@
     <ClCompile Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\util.cc" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="creditsLayer.cpp" />
     <ClCompile Include="db.cpp" />
     <ClCompile Include="gameLayer.cpp" />
     <ClCompile Include="gameoverlabel.cpp" />

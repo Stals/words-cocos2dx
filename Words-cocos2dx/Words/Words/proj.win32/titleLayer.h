@@ -1,6 +1,7 @@
 #pragma once
 #include "cocos2d.h"
 #include "word.h"
+#include "SimpleAudioEngine.h"  
 
 class TitleLayer :	public cocos2d::CCLayer
 {
@@ -16,7 +17,7 @@ public:
 	CREATE_FUNC(TitleLayer);
     
 	void newGameAction(CCObject *pSender);
-	void leaderboardAction(CCObject *pSender);
+	void creditsAction(CCObject *pSender);
 private:
 };
 

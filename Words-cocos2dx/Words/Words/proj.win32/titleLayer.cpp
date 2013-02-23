@@ -1,7 +1,7 @@
 #include "titleLayer.h"
 
 #include "gameLayer.h"
-//#include "ScoresLayer.h"
+#include "creditsLayer.h"
 //#include "ControlsLayer.h"
 
 USING_NS_CC;
@@ -49,12 +49,12 @@ bool TitleLayer::init()
 	CCSprite *newGameSprite = CCSprite::spriteWithFile("menu/new_game.png");
 	CCMenuItemSprite *newGameButton = CCMenuItemSprite::itemWithNormalSprite(newGameSprite, newGameSprite, newGameSprite, this, menu_selector(TitleLayer::newGameAction));
 
-	CCSprite *leaderboardSprite = CCSprite::spriteWithFile("menu/leaderboard.png");
-	CCMenuItemSprite *leaderboardButton = CCMenuItemSprite::itemWithNormalSprite(leaderboardSprite, leaderboardSprite, leaderboardSprite,
-		this, menu_selector(TitleLayer::leaderboardAction));
+	CCSprite *creditsSprite = CCSprite::spriteWithFile("menu/credits.png");
+	CCMenuItemSprite *creditsButton = CCMenuItemSprite::itemWithNormalSprite(creditsSprite, creditsSprite, creditsSprite,
+		this, menu_selector(TitleLayer::creditsAction));
 
    
-	CCMenu *menu = CCMenu::menuWithItems(newGameButton, leaderboardButton, NULL);
+	CCMenu *menu = CCMenu::menuWithItems(newGameButton, creditsButton, NULL);
 	menu->alignItemsVerticallyWithPadding(20);
     
 	// Set position of menu to be below the title text
@@ -77,6 +77,7 @@ bool TitleLayer::init()
 	//word->alignLettersHorizontallyWithPadding(42);
 	//word->setPosition(ccp(windowSize.width/2, windowSize.height - 50));
 	//word->randomlyRotateLetters();
+	
 	return true;
 }
 
@@ -84,6 +85,6 @@ void TitleLayer::newGameAction(CCObject *pSender){
 	CCDirector::sharedDirector()->replaceScene(GameLayer::scene());
 }
 
-void TitleLayer::leaderboardAction(CCObject *pSender){
-	//CCDirector::sharedDirector()->resplaceScene(Leaderboard::scene());
+void TitleLayer::creditsAction(CCObject *pSender){
+	CCDirector::sharedDirector()->replaceScene(CreditsLayer::scene());
 }

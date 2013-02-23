@@ -1,79 +1,11 @@
-﻿Build started 10.02.2013 19:29:05.
+﻿Build started 14.02.2013 23:09:54.
      1>Project "C:\Users\Stals\Dropbox\Programming\BigProjects\C++\Workds-workingTitle\Words-cocos2dx\Words\Words\proj.win32\Words.win32.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Release.win32\Words.win32.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGSNDEBUG /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt "..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\basic_statement.cc" "..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\command.cc" "..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\connection.cc" "..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\exception.cc" "..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\query.cc" "..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sqlite3cc\transaction.cc" ..\Classes\AppDelegate.cpp db.cpp gameLayer.cpp letter.cpp titleLayer.cpp word.cpp
-         basic_statement.cc
-         command.cc
-         connection.cc
-         exception.cc
-         query.cc
-         transaction.cc
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGSNDEBUG /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\AppDelegate.cpp titleLayer.cpp
          AppDelegate.cpp
-         db.cpp
-     1>db.cpp(31): warning C4018: '<' : signed/unsigned mismatch
-         gameLayer.cpp
-     1>gameLayer.cpp(164): warning C4996: 'cocos2d::CCSprite::spriteWithFile': was declared deprecated
-                 C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes/CCSprite.h(180) : see declaration of 'cocos2d::CCSprite::spriteWithFile'
-     1>gameLayer.cpp(172): warning C4996: 'cocos2d::CCSprite::spriteWithFile': was declared deprecated
-                 C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes/CCSprite.h(180) : see declaration of 'cocos2d::CCSprite::spriteWithFile'
-     1>gameLayer.cpp(174): warning C4996: 'cocos2d::CCMenuItemSprite::itemWithNormalSprite': was declared deprecated
-                 C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes/CCMenuItem.h(284) : see declaration of 'cocos2d::CCMenuItemSprite::itemWithNormalSprite'
-     1>gameLayer.cpp(177): warning C4996: 'cocos2d::CCMenu::menuWithItems': was declared deprecated
-                 C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes/CCMenu.h(80) : see declaration of 'cocos2d::CCMenu::menuWithItems'
-     1>gameLayer.cpp(193): warning C4996: 'cocos2d::CCSprite::spriteWithFile': was declared deprecated
-                 C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes/CCSprite.h(180) : see declaration of 'cocos2d::CCSprite::spriteWithFile'
-     1>gameLayer.cpp(194): warning C4996: 'cocos2d::CCSprite::spriteWithFile': was declared deprecated
-                 C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes/CCSprite.h(180) : see declaration of 'cocos2d::CCSprite::spriteWithFile'
-     1>gameLayer.cpp(196): warning C4996: 'cocos2d::CCMenuItemSprite::itemWithNormalSprite': was declared deprecated
-                 C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes/CCMenuItem.h(284) : see declaration of 'cocos2d::CCMenuItemSprite::itemWithNormalSprite'
-     1>gameLayer.cpp(199): warning C4996: 'cocos2d::CCMenu::menuWithItems': was declared deprecated
-                 C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes/CCMenu.h(80) : see declaration of 'cocos2d::CCMenu::menuWithItems'
-     1>gameLayer.cpp(272): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdlib.h(867) : see declaration of 'itoa'
-     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\boost/math/special_functions/fpclassify.hpp(101): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\boost/math/special_functions/fpclassify.hpp(528) : see reference to function template instantiation 'bool boost::math_detail::is_nan_helper<float>(T,const boost::true_type &)' being compiled
-                 with
-                 [
-                     T=float
-                 ]
-     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\boost/math/special_functions/fpclassify.hpp(101): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\boost/math/special_functions/fpclassify.hpp(529) : see reference to function template instantiation 'bool boost::math_detail::is_nan_helper<double>(T,const boost::true_type &)' being compiled
-                 with
-                 [
-                     T=double
-                 ]
-     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\boost/math/special_functions/fpclassify.hpp(101): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\boost/math/special_functions/fpclassify.hpp(530) : see reference to function template instantiation 'bool boost::math_detail::is_nan_helper<long double>(T,const boost::true_type &)' being compiled
-                 with
-                 [
-                     T=long double
-                 ]
-         letter.cpp
-     1>letter.cpp(75): warning C4996: 'cocos2d::CCTouch::locationInView': was declared deprecated
-                 C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\touch_dispatcher/CCTouch.h(60) : see declaration of 'cocos2d::CCTouch::locationInView'
-     1>letter.cpp(77): warning C4996: 'cocos2d::CCRect::CCRectContainsPoint': was declared deprecated
-                 c:\users\stals\desktop\cocos2d-2.0-x-2.0.4\cocos2dx\cocoa/CCGeometry.h(106) : see declaration of 'cocos2d::CCRect::CCRectContainsPoint'
-     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\boost/math/special_functions/fpclassify.hpp(101): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\boost/math/special_functions/fpclassify.hpp(528) : see reference to function template instantiation 'bool boost::math_detail::is_nan_helper<float>(T,const boost::true_type &)' being compiled
-                 with
-                 [
-                     T=float
-                 ]
-     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\boost/math/special_functions/fpclassify.hpp(101): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\boost/math/special_functions/fpclassify.hpp(529) : see reference to function template instantiation 'bool boost::math_detail::is_nan_helper<double>(T,const boost::true_type &)' being compiled
-                 with
-                 [
-                     T=double
-                 ]
-     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\boost/math/special_functions/fpclassify.hpp(101): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\boost/math/special_functions/fpclassify.hpp(530) : see reference to function template instantiation 'bool boost::math_detail::is_nan_helper<long double>(T,const boost::true_type &)' being compiled
-                 with
-                 [
-                     T=long double
-                 ]
          titleLayer.cpp
      1>titleLayer.cpp(35): warning C4996: 'cocos2d::CCSprite::spriteWithFile': was declared deprecated
                  C:\Users\Stals\Desktop\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes/CCSprite.h(180) : see declaration of 'cocos2d::CCSprite::spriteWithFile'
@@ -105,7 +37,6 @@
                  [
                      T=long double
                  ]
-         word.cpp
          Generating Code...
        ResourceCompile:
          All outputs are up-to-date.
@@ -125,6 +56,7 @@
          Release.win32\HelloWorldScene.obj
          Release.win32\db.obj
          Release.win32\gameLayer.obj
+         Release.win32\gameoverlabel.obj
          Release.win32\letter.obj
          Release.win32\main.obj
          Release.win32\titleLayer.obj
@@ -139,4 +71,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:55.77
+Time Elapsed 00:00:08.24

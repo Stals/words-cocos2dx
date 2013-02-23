@@ -34,6 +34,11 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     // run
     pDirector->runWithScene(pScene);
+
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->setBackgroundMusicVolume(0.5);
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("sound/music/0.wav");
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("sound/music/0.wav", true);  
+
     return true;
 }
 
